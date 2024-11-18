@@ -1,0 +1,73 @@
+.dropdown-toggle::after {
+  display: none;
+}
+.d-flex {
+  overflow-x: auto; /* Attiva lo scroll orizzontale */
+  -ms-overflow-style: none; /* Nasconde la barra di scorrimento in IE e Edge */
+  scrollbar-width: none; /* Nasconde la barra di scorrimento in Firefox */
+}
+
+/* Nasconde la barra di scorrimento in WebKit browsers (Chrome, Safari, etc.) */
+.d-flex::-webkit-scrollbar {
+  display: none;
+}
+
+/* Stili di base per il div */
+/* .scrollable-container {
+  position: relative;
+  overflow-x: auto;
+  white-space: nowrap;
+} */
+
+/* Gradiente iniziale alla fine del contenitore */
+/* .scrollable-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px; 
+  height: 100%;
+  background: linear-gradient(to right, transparent, black);
+  pointer-events: none; /* Permette di interagire con gli altri elementi sotto */
+/* } */
+
+/* Gradiente che si muove all'inizio quando si scorre */
+/* .scrollable-container.scrolled::after {
+  background: linear-gradient(to left, transparent, black);
+} */
+
+.scrollable-container {
+  position: relative;
+  width: 100%;
+}
+
+.scrollable-container::before,
+.scrollable-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px; /* Larghezza del gradiente */
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.scrollable-container::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  opacity: 0; /* Nascosto inizialmente */
+}
+
+.scrollable-container::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  opacity: 1; /* Visibile inizialmente */
+}
+
+.scrollable-container.start::before {
+  opacity: 1;
+}
+.scrollable-container.start::after {
+  opacity: 0;
+}
