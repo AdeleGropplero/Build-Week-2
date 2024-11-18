@@ -1,3 +1,5 @@
+/* ------------------------------------------------------------------------------------------------------------ */
+/* carosello */
 .dropdown-toggle::after {
   display: none;
 }
@@ -11,30 +13,6 @@
 .d-flex::-webkit-scrollbar {
   display: none;
 }
-
-/* Stili di base per il div */
-/* .scrollable-container {
-  position: relative;
-  overflow-x: auto;
-  white-space: nowrap;
-} */
-
-/* Gradiente iniziale alla fine del contenitore */
-/* .scrollable-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50px; 
-  height: 100%;
-  background: linear-gradient(to right, transparent, black);
-  pointer-events: none; /* Permette di interagire con gli altri elementi sotto */
-/* } */
-
-/* Gradiente che si muove all'inizio quando si scorre */
-/* .scrollable-container.scrolled::after {
-  background: linear-gradient(to left, transparent, black);
-} */
 
 .scrollable-container {
   position: relative;
@@ -71,3 +49,25 @@
 .scrollable-container.start::after {
   opacity: 0;
 }
+
+/* ------------------------------------------------------------------------------------------------------------ */
+/* Search aside + dropdown */
+
+/* .search-bar {
+  width: 0;
+  opacity: 0;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  position: absolute;
+  left: 0;
+  visibility: hidden;
+}
+
+.search-bar.clicked {
+  width: 200px; 
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+ */
