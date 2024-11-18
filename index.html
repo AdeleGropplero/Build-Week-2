@@ -14,6 +14,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+
+    <style>
+      .dropdown-toggle::after {
+        display: none;
+      }
+    </style>
   </head>
   <body data-bs-theme="dark" class="bg-black">
     <div class="mx-4">
@@ -196,7 +202,7 @@
                   </div>
                   <div><i class="bi bi-list-ul fs-4"></i></div>
                 </button>
-                <ul class="dropdown-menu dropdown-menu-dark">
+                <ul class="dropdown-menu" style="text-decoration: none">
                   <li><a class="dropdown-item" href="#">Action</a></li>
                   <li><a class="dropdown-item" href="#">Another action</a></li>
                   <li>
