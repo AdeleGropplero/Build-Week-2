@@ -10,6 +10,7 @@ body {
 #nav {
   position: sticky;
   top: 0;
+  z-index: 999;
 }
 
 /* ------------------------------------------------------------------------------------------------------------ */
@@ -17,9 +18,8 @@ body {
 #asideContent {
   background-color: #121212;
   max-height: 90vh;
-
   position: sticky;
-  top: 70px;
+  top: 77px;
 }
 
 #aside-fixed {
@@ -28,8 +28,8 @@ body {
   z-index: 999;
 }
 
-#containerCards {
-}
+/* #containerCards {
+} */
 
 /* carosello */
 .dropdown-toggle::after {
@@ -109,4 +109,20 @@ body {
 
 .card-aside:hover {
   background-color: #212529;
+}
+
+/* CONTENUTO CENTRALE */
+
+#centralContent .card {
+  height: 100%;
+}
+#centralContent .card img {
+  object-fit: cover;
+  height: 100%;
+}
+
+#centralContent .card-body {
+  flex: 1 1 auto;
+  padding-left: 4px;
+  color: var(--bs-card-color);
 }
