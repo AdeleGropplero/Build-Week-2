@@ -22,7 +22,7 @@
     <div class="mx-4">
       <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
       <!-- NAV BAR PRINCIPALE -->
-      <nav class="navbar bg-black pe-2">
+      <nav id="nav" class="navbar bg-black pe-2">
         <div class="container-fluid px-0">
           <button class="navbar-brand bg-black border border-black py-0">
             <i class="bi bi-spotify fs-1"></i>
@@ -105,125 +105,379 @@
 
       <div id="dad" class="bg-black">
         <div class="row">
-          <div id="asideContent" class="col-4 px-4 bg-dark rounded">
+          <div id="asideContent" class="col-4 px-2 py-3 rounded">
             <!-- library -->
-            <div
-              id="library"
-              class="d-flex align-items-center justify-content-between"
-            >
-              <button
-                class="btn encore-text-body-medium-bold d-flex align-items-center px-0"
-                aria-label="Comprimi La tua libreria"
-                data-encore-id="buttonTertiary"
+            <div id="aside-fixed">
+              <div
+                id="library"
+                class="d-flex align-items-center justify-content-between px-2"
               >
-                <div>
-                  <svg
-                    width="28px"
-                    data-encore-id="icon"
-                    role="img"
-                    aria-hidden="true"
-                    viewBox="0 0 24 24"
-                    class="Svg-sc-ytk21e-0 bneLcE me-3"
-                    fill=" grey"
-                  >
-                    <path
-                      d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"
-                    ></path>
-                  </svg>
-                </div>
-                <div class="text-secondary fs-6">Your Library</div>
-              </button>
-
-              <button class="btn"><i class="bi bi-plus-lg"></i></button>
-            </div>
-
-            <!-- carosello -->
-            <div class="mt-3 scrollable-container">
-              <div class="d-flex gap-3 content">
-                <!-- Bottoni allineati orizzontalmente con spazio tra di loro -->
-                <button class="btn rounded-pill bg-secondary px-3 py-2">
-                  Playlists
-                </button>
-                <button class="btn rounded-pill bg-secondary px-3 py-2">
-                  Artists
-                </button>
-                <button class="btn rounded-pill bg-secondary px-3 py-2">
-                  Albums
-                </button>
                 <button
-                  class="btn rounded-pill bg-secondary px-3 py-2 flex-grow-1"
-                  style="white-space: nowrap"
+                  class="btn encore-text-body-medium-bold d-flex align-items-center px-0"
+                  aria-label="Comprimi La tua libreria"
+                  data-encore-id="buttonTertiary"
                 >
-                  Podcast & Shows
+                  <div>
+                    <svg
+                      width="28px"
+                      data-encore-id="icon"
+                      role="img"
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      class="Svg-sc-ytk21e-0 bneLcE me-3"
+                      fill=" grey"
+                    >
+                      <path
+                        d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="text-secondary fs-6">Your Library</div>
                 </button>
+
+                <button class="btn"><i class="bi bi-plus-lg"></i></button>
+              </div>
+
+              <!-- carosello -->
+              <div class="px-2">
+                <div class="mt-3 scrollable-container">
+                  <div class="d-flex gap-2 content">
+                    <!-- Bottoni allineati orizzontalmente con spazio tra di loro -->
+                    <button class="btn rounded-pill bg-dark px-3 py-1">
+                      Playlists
+                    </button>
+                    <button class="btn rounded-pill bg-dark px-3 py-1">
+                      Artists
+                    </button>
+                    <button class="btn rounded-pill bg-dark px-3 py-1">
+                      Albums
+                    </button>
+                    <button
+                      class="btn rounded-pill bg-dark px-3 py-1 flex-grow-1"
+                      style="white-space: nowrap"
+                    >
+                      Podcast & Shows
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
 
             <!--DIV SEARCH + DROPDWN -->
-            <div
-              id="containerSearchAside"
-              class="d-flex justify-content-between mt-3 align-items-center"
-            >
-              <div class="d-flex align-items-center">
-                <button id="search-btn-aside" class="btn px-0">
-                  <svg
-                    width="25"
-                    height="25"
-                    viewBox="0 0 20 20"
+            <div id="scrolling-aside">
+              <div
+                id="containerSearchAside"
+                class="d-flex justify-content-between mt-3 align-items-center px-2"
+              >
+                <div class="d-flex align-items-center">
+                  <button id="search-btn-aside" class="btn px-0">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      aria-hidden="true"
+                      class="DocSearch-Search-Icon"
+                      fill="white"
+                    >
+                      <path
+                        d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z"
+                        stroke="currentColor"
+                        fill="none"
+                        fill-rule="evenodd"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+                  </button>
+                  <input
+                    type="text"
+                    id="search-bar"
+                    class="search-bar search-btn-aside"
+                    placeholder="Cerca..."
                     aria-hidden="true"
-                    class="DocSearch-Search-Icon"
-                    fill="white"
+                  />
+                </div>
+
+                <div class="dropdown">
+                  <button
+                    aria-controls="sort-and-view-picker"
+                    class="btn px-0 d-flex align-items-center dropdown-toggle"
+                    aria-label="Visualizzazione Recenti, Elenco"
+                    data-encore-id="buttonTertiary"
+                    data-bs-toggle="dropdown"
+                    type="button"
+                    aria-expanded="false"
                   >
-                    <path
-                      d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z"
-                      stroke="currentColor"
-                      fill="none"
-                      fill-rule="evenodd"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                  </svg>
-                </button>
-                <!--  <input
-                  type="text"
-                  id="search-bar"
-                  class="search-bar"
-                  placeholder="Cerca..."
-                  aria-hidden="true"
-                /> -->
+                    <div id="recentiScoparsa">
+                      <span
+                        class="me-2"
+                        data-encore-id="text"
+                        data-sortbox-label="true"
+                        >Recenti
+                      </span>
+                    </div>
+                    <div><i class="bi bi-list-ul fs-4"></i></div>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">Action</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Separated link</a>
+                    </li>
+                  </ul>
+                </div>
               </div>
 
-              <div class="dropdown">
-                <button
-                  aria-controls="sort-and-view-picker"
-                  class="btn px-0 d-flex align-items-center dropdown-toggle"
-                  aria-label="Visualizzazione Recenti, Elenco"
-                  data-encore-id="buttonTertiary"
-                  data-bs-toggle="dropdown"
-                  type="button"
-                  aria-expanded="false"
-                >
-                  <div>
-                    <span
-                      class="me-2"
-                      data-encore-id="text"
-                      data-sortbox-label="true"
-                      >Recenti
-                    </span>
+              <!-------------------------------------------------------------------------------------------------------------------------------------- -->
+              <!-- CARDS  -->
+
+              <div id="containerCards">
+                <div class="card card-aside">
+                  <div class="row g-0">
+                    <div class="col-md-4 p-2">
+                      <img
+                        src="./asset 3/imgs/main/image-1.jpg"
+                        class="img-fluid rounded img-aside"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body px-0 py-2 overflow-hidden">
+                        <h5 class="card-title fs-6">Card title</h5>
+                        <p class="card-text testi7">Categoria - Artisti</p>
+                      </div>
+                    </div>
                   </div>
-                  <div><i class="bi bi-list-ul fs-4"></i></div>
-                </button>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="#">Action</a>
-                  </li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li><a class="dropdown-item" href="#">Separated link</a></li>
-                </ul>
+                </div>
+                <div class="card card-aside">
+                  <div class="row g-0">
+                    <div class="col-md-4 p-2">
+                      <img
+                        src="./asset 3/imgs/main/image-1.jpg"
+                        class="img-fluid rounded img-aside"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body px-0 py-2 overflow-hidden">
+                        <h5 class="card-title fs-6">Card title</h5>
+                        <p class="card-text testi7">Categoria - Artisti</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-aside">
+                  <div class="row g-0">
+                    <div class="col-md-4 p-2">
+                      <img
+                        src="./asset 3/imgs/main/image-1.jpg"
+                        class="img-fluid rounded img-aside"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body px-0 py-2 overflow-hidden">
+                        <h5 class="card-title fs-6">Card title</h5>
+                        <p class="card-text testi7">Categoria - Artisti</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-aside">
+                  <div class="row g-0">
+                    <div class="col-md-4 p-2">
+                      <img
+                        src="./asset 3/imgs/main/image-1.jpg"
+                        class="img-fluid rounded img-aside"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body px-0 py-2 overflow-hidden">
+                        <h5 class="card-title fs-6">Card title</h5>
+                        <p class="card-text testi7">Categoria - Artisti</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-aside">
+                  <div class="row g-0">
+                    <div class="col-md-4 p-2">
+                      <img
+                        src="./asset 3/imgs/main/image-1.jpg"
+                        class="img-fluid rounded img-aside"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body px-0 py-2 overflow-hidden">
+                        <h5 class="card-title fs-6">Card title</h5>
+                        <p class="card-text testi7">Categoria - Artisti</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-aside">
+                  <div class="row g-0">
+                    <div class="col-md-4 p-2">
+                      <img
+                        src="./asset 3/imgs/main/image-1.jpg"
+                        class="img-fluid rounded img-aside"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body px-0 py-2 overflow-hidden">
+                        <h5 class="card-title fs-6">Card title</h5>
+                        <p class="card-text testi7">Categoria - Artisti</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-aside">
+                  <div class="row g-0">
+                    <div class="col-md-4 p-2">
+                      <img
+                        src="./asset 3/imgs/main/image-1.jpg"
+                        class="img-fluid rounded img-aside"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body px-0 py-2 overflow-hidden">
+                        <h5 class="card-title fs-6">Card title</h5>
+                        <p class="card-text testi7">Categoria - Artisti</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-aside">
+                  <div class="row g-0">
+                    <div class="col-md-4 p-2">
+                      <img
+                        src="./asset 3/imgs/main/image-1.jpg"
+                        class="img-fluid rounded img-aside"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body px-0 py-2 overflow-hidden">
+                        <h5 class="card-title fs-6">Card title</h5>
+                        <p class="card-text testi7">Categoria - Artisti</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-aside">
+                  <div class="row g-0">
+                    <div class="col-md-4 p-2">
+                      <img
+                        src="./asset 3/imgs/main/image-1.jpg"
+                        class="img-fluid rounded img-aside"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body px-0 py-2 overflow-hidden">
+                        <h5 class="card-title fs-6">Card title</h5>
+                        <p class="card-text testi7">Categoria - Artisti</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-aside">
+                  <div class="row g-0">
+                    <div class="col-md-4 p-2">
+                      <img
+                        src="./asset 3/imgs/main/image-1.jpg"
+                        class="img-fluid rounded img-aside"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body px-0 py-2 overflow-hidden">
+                        <h5 class="card-title fs-6">Card title</h5>
+                        <p class="card-text testi7">Categoria - Artisti</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-aside">
+                  <div class="row g-0">
+                    <div class="col-md-4 p-2">
+                      <img
+                        src="./asset 3/imgs/main/image-1.jpg"
+                        class="img-fluid rounded img-aside"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body px-0 py-2 overflow-hidden">
+                        <h5 class="card-title fs-6">Card title</h5>
+                        <p class="card-text testi7">Categoria - Artisti</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-aside">
+                  <div class="row g-0">
+                    <div class="col-md-4 p-2">
+                      <img
+                        src="./asset 3/imgs/main/image-1.jpg"
+                        class="img-fluid rounded img-aside"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body px-0 py-2 overflow-hidden">
+                        <h5 class="card-title fs-6">Card title</h5>
+                        <p class="card-text testi7">Categoria - Artisti</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-aside">
+                  <div class="row g-0">
+                    <div class="col-md-4 p-2">
+                      <img
+                        src="./asset 3/imgs/main/image-1.jpg"
+                        class="img-fluid rounded img-aside"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body px-0 py-2 overflow-hidden">
+                        <h5 class="card-title fs-6">Card title</h5>
+                        <p class="card-text testi7">Categoria - Artisti</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-aside">
+                  <div class="row g-0">
+                    <div class="col-md-4 p-2">
+                      <img
+                        src="./asset 3/imgs/main/image-1.jpg"
+                        class="img-fluid rounded img-aside"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body px-0 py-2 overflow-hidden">
+                        <h5 class="card-title fs-6">Card title</h5>
+                        <p class="card-text testi7">Categoria - Artisti</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

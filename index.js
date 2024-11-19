@@ -15,8 +15,20 @@ content.addEventListener("scroll", () => {
 
 /* ------------------------------------------------------------------------------------------------------------ */
 /* Search aside + dropdown */
-/* const searchButtonAside = document.getElementById("search-btn-aside");
-searchButtonAside.onclick = function () {
+
+document.addEventListener("DOMContentLoaded", function () {
+  const searchBtn = document.getElementById("search-btn-aside");
   const searchBar = document.getElementById("search-bar");
-  searchBar.classList.toggle("clicked");
-}; */
+  const searchContainer = document.getElementById("search-container");
+  const recentiScoparsa = document.getElementById("recentiScoparsa");
+
+  searchBtn.addEventListener("click", function () {
+    if (searchBar.style.display === "none") {
+      searchBar.style.display = "inline-block";
+      recentiScoparsa.style.display = "none";
+    } else {
+      searchBar.style.display = "none";
+      recentiScoparsa.style.display = "inline-block";
+    }
+  });
+});

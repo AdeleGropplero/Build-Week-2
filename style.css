@@ -1,8 +1,36 @@
 body {
   font-family: "Circular", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 /* ------------------------------------------------------------------------------------------------------------ */
+/* navbar */
+
+#nav {
+  position: sticky;
+  top: 0;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+/* aside in generale */
+#asideContent {
+  background-color: #121212;
+  max-height: 90vh;
+
+  position: sticky;
+  top: 70px;
+}
+
+#aside-fixed {
+  position: sticky;
+  top: 70px;
+  z-index: 999;
+}
+
+#containerCards {
+}
+
 /* carosello */
 .dropdown-toggle::after {
   display: none;
@@ -58,20 +86,27 @@ body {
 /* ------------------------------------------------------------------------------------------------------------ */
 /* Search aside + dropdown */
 
-/* .search-bar {
-  width: 0;
-  opacity: 0;
-  transition: width 0.3s ease, opacity 0.3s ease;
-  border: 1px solid #ccc;
-  padding: 5px 10px;
-  position: absolute;
-  left: 0;
-  visibility: hidden;
+.search-btn-aside {
+  display: none;
 }
 
-.search-bar.clicked {
-  width: 200px; 
-  opacity: 1;
-  visibility: visible;
-  z-index: 1;
-}*/
+/* ------------------------------------------------------------------------------------------------------------ */
+/* cards */
+
+.testi7 {
+  font-size: 0.75rem;
+}
+
+.img-aside {
+  width: 52px;
+  height: 52px;
+}
+
+.card-aside {
+  border: none;
+  background-color: transparent;
+}
+
+.card-aside:hover {
+  background-color: #212529;
+}
