@@ -12,6 +12,17 @@ body {
   top: 0;
   z-index: 999;
 }
+.topSearch:hover {
+  background-color: #555;
+  color: white;
+  border-color: gray 2px solid;
+}
+.mouseHover:hover,
+.svg:hover {
+  color: white !important;
+  fill: white;
+  border-left: white;
+}
 
 /* ------------------------------------------------------------------------------------------------------------ */
 /* aside in generale */

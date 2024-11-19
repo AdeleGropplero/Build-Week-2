@@ -15,20 +15,53 @@ content.addEventListener("scroll", () => {
 
 /* ------------------------------------------------------------------------------------------------------------ */
 /* Search aside + dropdown */
+/* const searchButtonAside = document.getElementById("search-btn-aside");
+searchButtonAside.onclick = function () {
+  const searchBar = document.getElementById("search-bar");
+  searchBar.classList.toggle("clicked");
+}; */
+
+/*barra di ricerca*/
+
+/*document.addEventListener("DOMContentLoaded", function () {
+  const searchBtn = document.getElementById("search-btn-aside");
+
+  const searchBar = document.createElement("input");
+  searchBar.type = "text";
+  searchBar.id = "search-bar";
+  searchBar.className = "search-bar";
+  searchBar.placeholder = "Cerca...";
+  searchBar.style.display = "none";
+
+  const parentContainer = searchBtn.parentElement;
+  parentContainer.appendChild(searchBar);
+
+  searchBtn.addEventListener("click", function () {
+    if (searchBar.style.display === "none") {
+      searchBar.style.display = "block";
+      searchBar.focus();
+    } else {
+      searchBar.style.display = "none";
+    }
+  });
+});*/
 
 document.addEventListener("DOMContentLoaded", function () {
   const searchBtn = document.getElementById("search-btn-aside");
   const searchBar = document.getElementById("search-bar");
   const searchContainer = document.getElementById("search-container");
-  const recentiScoparsa = document.getElementById("recentiScoparsa");
 
   searchBtn.addEventListener("click", function () {
     if (searchBar.style.display === "none") {
       searchBar.style.display = "inline-block";
-      recentiScoparsa.style.display = "none";
+      searchBar.style.border = "none";
+      searchBar.style.backgroundColor = "#222529";
+      searchBar.style.borderRadius = "2px";
+      searchContainer.style.backgroundColor = "#222529";
+      searchContainer.style.borderRadius = "5px";
+      searchContainer.style.width = "70%";
     } else {
       searchBar.style.display = "none";
-      recentiScoparsa.style.display = "inline-block";
     }
   });
 });
