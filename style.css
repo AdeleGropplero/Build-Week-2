@@ -20,11 +20,21 @@ body {
   max-height: 90vh;
   position: sticky;
   top: 77px;
+  overflow-y: scroll;
+
+  scrollbar-width: thin;
+  scrollbar-color: #555 #121212;
+  /* -ms-overflow-track-style: none; */
 }
 
+/* #scrolling-aside {
+} */
+
 #aside-fixed {
+  padding-block: 20px;
+  background-color: #121212;
   position: sticky;
-  top: 70px;
+  top: 0px;
   z-index: 999;
 }
 
@@ -112,6 +122,34 @@ body {
 }
 
 /* CONTENUTO CENTRALE */
+
+#buttonCenter {
+  position: sticky;
+  top: 0;
+  padding-top: 20px;
+  background-color: #121212;
+  z-index: 898;
+}
+
+#centralContent {
+  overflow: hidden;
+  background-color: #121212;
+  max-height: 90vh;
+  overflow-y: scroll;
+}
+
+#centralContent {
+  scrollbar-width: thin;
+  scrollbar-color: #555 #121212;
+  /* -ms-overflow-track-style: none; */
+}
+
+/* #centralContent::-webkit-scrollbar-track {
+  background-color: #830909;
+} */
+/* #centralContent::-webkit-scrollbar {
+  width: 8px;
+} */
 
 #centralContent .card {
   height: 100%;
