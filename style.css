@@ -17,7 +17,10 @@ body {
 /* aside in generale */
 #asideContent {
   background-color: #121212;
-  max-height: 90vh;
+}
+
+#scrolling-aside {
+  max-height: 77vh;
   position: sticky;
   top: 77px;
   overflow-y: scroll;
@@ -26,9 +29,6 @@ body {
   scrollbar-color: #555 #121212;
   /* -ms-overflow-track-style: none; */
 }
-
-/* #scrolling-aside {
-} */
 
 #aside-fixed {
   padding-block: 20px;
@@ -151,16 +151,33 @@ body {
   width: 8px;
 } */
 
-#centralContent .card {
+/* #centralContent .card {
   height: 100%;
-}
-#centralContent .card img {
+} */
+
+/* #centralContent .card img {
   object-fit: cover;
   height: 100%;
-}
+} */
 
 #centralContent .card-body {
   flex: 1 1 auto;
   padding-left: 4px;
   color: var(--bs-card-color);
+}
+
+.orizontal-card-central {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.06);
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.orizontal-card-central:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.img-orizontal-card-central {
+  width: 52px;
+  height: 52px;
 }
