@@ -10,13 +10,13 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./asset 3/css/circular-font.css" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <link rel="stylesheet" href="./asset 3/css/circular-font.css" />
-
-    <link rel="stylesheet" href="./assets/dist/css/style.min.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body data-bs-theme="dark" class="bg-black">
     <div class="mx-4">
@@ -164,7 +164,7 @@
               id="containerSearchAside"
               class="d-flex justify-content-between mt-3 align-items-center"
             >
-              <div class="d-flex align-items-center position-relative">
+              <div class="d-flex align-items-center">
                 <button id="search-btn-aside" class="btn px-0">
                   <svg
                     width="25"
@@ -195,16 +195,17 @@
 
               <div class="dropdown">
                 <button
-                  role="combobox"
                   aria-controls="sort-and-view-picker"
-                  class="btn px-0 encore-text-body-small-bold d-flex align-items-center dropdown-toggle"
+                  class="btn px-0 d-flex align-items-center dropdown-toggle"
                   aria-label="Visualizzazione Recenti, Elenco"
                   data-encore-id="buttonTertiary"
                   data-bs-toggle="dropdown"
+                  type="button"
+                  aria-expanded="false"
                 >
                   <div>
                     <span
-                      class="encore-text encore-text-body-small me-2"
+                      class="me-2"
                       data-encore-id="text"
                       data-sortbox-label="true"
                       >Recenti
@@ -212,8 +213,10 @@
                   </div>
                   <div><i class="bi bi-list-ul fs-4"></i></div>
                 </button>
-                <ul class="dropdown-menu" style="text-decoration: none">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">Action</a>
+                  </li>
                   <li><a class="dropdown-item" href="#">Another action</a></li>
                   <li>
                     <a class="dropdown-item" href="#">Something else here</a>

@@ -7,6 +7,7 @@ body {
 .dropdown-toggle::after {
   display: none;
 }
+
 .d-flex {
   overflow-x: auto; /* Attiva lo scroll orizzontale */
   -ms-overflow-style: none; /* Nasconde la barra di scorrimento in IE e Edge */
@@ -28,7 +29,7 @@ body {
   content: "";
   position: absolute;
   top: 0;
-  width: 80px; /* Larghezza del gradiente */
+  width: 80px;
   height: 100%;
   pointer-events: none;
   z-index: 1;
@@ -38,13 +39,13 @@ body {
 .scrollable-container::before {
   left: 0;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-  opacity: 0; /* Nascosto inizialmente */
+  opacity: 0;
 }
 
 .scrollable-container::after {
   right: 0;
   background: linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-  opacity: 1; /* Visibile inizialmente */
+  opacity: 1;
 }
 
 .scrollable-container.start::before {
@@ -73,5 +74,4 @@ body {
   opacity: 1;
   visibility: visible;
   z-index: 1;
-}
- */
+}*/
