@@ -8,7 +8,7 @@ body {
   display: none;
 }
 
-.d-flex {
+.content {
   overflow-x: auto; /* Attiva lo scroll orizzontale */
   -ms-overflow-style: none; /* Nasconde la barra di scorrimento in IE e Edge */
   scrollbar-width: none; /* Nasconde la barra di scorrimento in Firefox */
