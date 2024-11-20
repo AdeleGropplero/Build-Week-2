@@ -15,19 +15,22 @@ content.addEventListener("scroll", () => {
 
 /* caroselli centrali*/
 
-const contentCenter = document.querySelector(".content-center");
-const scrollableXContainerCenter = document.querySelector(
+const contentCenter = document.querySelectorAll(".content-center");
+const scrollableXContainerCenter = document.querySelectorAll(
   ".scrollableX-container-center"
 );
+contentCenter.forEach((singleContent) => {
+  singleContent.addEventListener("scroll", () => {
+    const scrollLeft = singleContent.scrollLeft;
 
-contentCenter.addEventListener("scroll", () => {
-  const scrollLeft = contentCenter.scrollLeft;
-
-  if (scrollLeft > 0) {
-    scrollableXContainerCenter.classList.add("start");
-  } else {
-    scrollableXContainerCenter.classList.remove("start");
-  }
+    scrollableXContainerCenter.forEach((singleScrollable) => {
+      if (scrollLeft > 0) {
+        singleScrollable.classList.add("start");
+      } else {
+        singleScrollable.classList.remove("start");
+      }
+    });
+  });
 });
 
 /* ------------------------------------------------------------------------------------------------------------ */
