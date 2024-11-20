@@ -16,7 +16,9 @@ content.addEventListener("scroll", () => {
 /* caroselli centrali*/
 
 const contentCenter = document.querySelectorAll(".content-center");
-const scrollableXContainerCenter = document.querySelectorAll(".scrollableX-container-center");
+const scrollableXContainerCenter = document.querySelectorAll(
+  ".scrollableX-container-center"
+);
 contentCenter.forEach((singleContent) => {
   singleContent.addEventListener("scroll", () => {
     const scrollLeft = singleContent.scrollLeft;
@@ -33,41 +35,12 @@ contentCenter.forEach((singleContent) => {
 
 /* ------------------------------------------------------------------------------------------------------------ */
 /* Search aside + dropdown */
-/* const searchButtonAside = document.getElementById("search-btn-aside");
-searchButtonAside.onclick = function () {
-  const searchBar = document.getElementById("search-bar");
-  searchBar.classList.toggle("clicked");
-}; */
-
-/*barra di ricerca*/
-
-/*document.addEventListener("DOMContentLoaded", function () {
-  const searchBtn = document.getElementById("search-btn-aside");
-
-  const searchBar = document.createElement("input");
-  searchBar.type = "text";
-  searchBar.id = "search-bar";
-  searchBar.className = "search-bar";
-  searchBar.placeholder = "Cerca...";
-  searchBar.style.display = "none";
-
-  const parentContainer = searchBtn.parentElement;
-  parentContainer.appendChild(searchBar);
-
-  searchBtn.addEventListener("click", function () {
-    if (searchBar.style.display === "none") {
-      searchBar.style.display = "block";
-      searchBar.focus();
-    } else {
-      searchBar.style.display = "none";
-    }
-  });
-});*/
 
 document.addEventListener("DOMContentLoaded", function () {
   const searchBtn = document.getElementById("search-btn-aside");
   const searchBar = document.getElementById("search-bar");
   const searchContainer = document.getElementById("search-container");
+  const recenti = document.getElementById("recentiScoparsa");
 
   searchBtn.addEventListener("click", function () {
     if (searchBar.style.display === "none") {
@@ -77,10 +50,13 @@ document.addEventListener("DOMContentLoaded", function () {
       searchBar.style.borderRadius = "2px";
       searchContainer.style.backgroundColor = "#222529";
       searchContainer.style.borderRadius = "5px";
-      searchContainer.style.width = "70%";
+      searchContainer.style.width = "80%";
+
+      recenti.style.display = "none";
     } else {
       searchBar.style.display = "none";
       searchContainer.style.backgroundColor = "#121212";
+      recenti.style.display = "block";
     }
   });
 
@@ -90,4 +66,98 @@ document.addEventListener("DOMContentLoaded", function () {
       searchContainer.style.backgroundColor = "#121212";
     }
   });
+});
+
+/* ------------------------------------------------------------------------------------------------------------ */
+/* Pare con API */
+
+const headerKeys = {
+  "x-rapidapi-key": "e749aa36bcmsh155faf2384d79a6p1a27bdjsn94b22b07ca21",
+  "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
+};
+
+const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
+const params = [
+  "eminem",
+  "mannarino",
+  "lazza",
+  "radiohead",
+  "883",
+  "altj",
+  "alter%20bridge",
+  "salmo",
+  "hozier",
+  "mina",
+  "muse",
+  "pomme"
+];
+
+let availableParams = [...params];
+
+const getArtists = function () {
+  /* In caso volessimo generare SOLO le canzoni di -1- artista basterà 
+  mettere il math.random fuori */
+  const randomIndex = Math.floor(Math.random() * availableParams.length);
+  const randomParam = availableParams.splice(randomIndex, 1)[0];
+
+  console.log(`Artista selezionato: ${randomParam}`);
+
+  fetch(url + randomParam, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": "e749aa36bcmsh155faf2384d79a6p1a27bdjsn94b22b07ca21",
+      "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
+    }
+  })
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error(
+          `Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`
+        );
+      }
+    })
+    .then((oggetto) => {
+      console.log(oggetto);
+      const randomNumber = Math.floor(Math.random() * 15);
+
+      const contentsCenter = document.querySelectorAll(".content-center");
+
+      contentsCenter.forEach((content) => {
+        const cardCenterContent = document.createElement("div");
+        cardCenterContent.className = "card-center-content";
+
+        const divCard = document.createElement("div");
+        divCard.className = "card border-0";
+
+        const cardImg = document.createElement("img");
+        cardImg.className = "card-img-top rounded-4";
+        cardImg.src = `${oggetto.data[randomNumber].album.cover_medium}`;
+
+        const cardBody = document.createElement("div");
+        cardBody.className = "card-body";
+
+        const p = document.createElement("p");
+        p.className = "card-title";
+        p.innerText = `${oggetto.data[randomNumber].album.title}`;
+
+        const p1 = document.createElement("p");
+        p1.className = "card-text";
+        p1.innerText = `${oggetto.data[randomNumber].artist.name}`;
+
+        content.appendChild(cardCenterContent);
+        cardCenterContent.appendChild(divCard);
+        divCard.append(cardImg, cardBody);
+        cardBody.append(p, p1);
+      });
+    })
+    .catch((err) => console.log(err));
+};
+
+window.addEventListener("DOMContentLoaded", function () {
+  getArtists();
+  getArtists();
+  getArtists();
+  getArtists();
 });
