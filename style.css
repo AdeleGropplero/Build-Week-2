@@ -287,6 +287,9 @@ body {
   background-color: #f8f9fa; /* Colore di sfondo chiaro */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .musicImg img {
@@ -323,7 +326,7 @@ body {
 
 #musicRange::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 15px;
+  width: 10px;
   height: 15px;
   background: rgb(0, 255, 0); /* Colore del pollice */
   /* Rende il pollice circolare */
@@ -331,7 +334,7 @@ body {
 
 #volume::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 15px;
+  width: 10px;
   height: 15px;
   background: rgb(0, 255, 0);
 }

@@ -1385,7 +1385,7 @@
     <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
     <!-- play bar -->
     <div
-      class="musicContainer d-flex flex-column flex-md-row align-items-center justify-content-between p-2 bg-black"
+      class="musicContainer d-flex flex-column flex-md-row align-items-center justify-content-between p-2 bg-black pb-3"
     >
       <!-- Sinistra: Immagine e testo -->
       <div
@@ -1419,7 +1419,8 @@
             <i class="bi bi-skip-end-fill fs-2"></i>
           </button>
         </div>
-        <div class="progress-container w-100 mt-2">
+        <div class="d-inline-flex align-items-center w-100 mt-2">
+          <div class="me-2">0:00</div>
           <input
             type="range"
             class="form-range"
@@ -1428,10 +1429,8 @@
             max="100"
             value="50"
           />
-          <div class="d-flex justify-content-between mt-1">
-            <span>0:00</span>
-            <span>3:30</span>
-          </div>
+
+          <div class="ms-2">3:30</div>
         </div>
       </div>
 
