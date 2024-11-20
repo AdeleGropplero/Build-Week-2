@@ -16,9 +16,7 @@ content.addEventListener("scroll", () => {
 /* caroselli centrali*/
 
 const contentCenter = document.querySelector(".content-center");
-const scrollableXContainerCenter = document.querySelector(
-  ".scrollableX-container-center"
-);
+const scrollableXContainerCenter = document.querySelector(".scrollableX-container-center");
 
 contentCenter.addEventListener("scroll", () => {
   const scrollLeft = contentCenter.scrollLeft;
@@ -79,6 +77,14 @@ document.addEventListener("DOMContentLoaded", function () {
       searchContainer.style.width = "70%";
     } else {
       searchBar.style.display = "none";
+      searchContainer.style.backgroundColor = "#121212";
+    }
+  });
+
+  document.addEventListener("click", function (event) {
+    if (!searchContainer.contains(event.target)) {
+      searchBar.style.display = "none";
+      searchContainer.style.backgroundColor = "#121212";
     }
   });
 });
