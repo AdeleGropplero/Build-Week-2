@@ -355,3 +355,20 @@ body {
 .musicLeft {
   justify-content: center;
 }
+
+.card-img-artist {
+  height: 40vh;
+}
+
+#cardArtist {
+  border: none;
+}
+#cardArtist h1 {
+  font-size: 80px;
+  font-weight: 800;
+  padding-top: 100px;
+}
+#cardArtist h1,
+p {
+  text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.65);
+}
