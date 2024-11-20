@@ -1066,6 +1066,72 @@
         </div>
       </div>
     </div>
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+    <!-- play bar -->
+    <div
+      class="musicContainer d-flex flex-column flex-md-row align-items-center justify-content-between p-2 bg-black"
+    >
+      <!-- Sinistra: Immagine e testo -->
+      <div
+        class="musicLeft d-flex align-items-center col-12 col-md-3 mb-2 mb-md-0"
+      >
+        <div class="musicImg rounded-3">
+          <img
+            src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+            class="img-fluid rounded-3 mt-2"
+          />
+        </div>
+        <div class="musicText ms-2">
+          <h6>Non me la menare</h6>
+          <p>883</p>
+        </div>
+      </div>
+
+      <!-- Centro: Controlli musica -->
+      <div
+        class="musicControls d-flex flex-column align-items-center col-12 col-md-6 mb-2 mb-md-0"
+      >
+        <div class="musicButtons d-flex align-items-center">
+          <button class="btn me-2">
+            <i class="bi bi-skip-start-fill fs-2"></i>
+          </button>
+          <button class="btn">
+            <i class="bi bi-play-circle-fill fs-2"></i>
+          </button>
+          <button class="btn ms-2">
+            <i class="bi bi-skip-end-fill fs-2"></i>
+          </button>
+        </div>
+        <div class="progress-container w-100 mt-2">
+          <input
+            type="range"
+            class="form-range"
+            id="musicRange"
+            min="0"
+            max="100"
+            value="50"
+          />
+          <div class="d-flex justify-content-between mt-1">
+            <span>0:00</span>
+            <span>3:30</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Destra: Controllo volume -->
+      <div class="musicRight d-flex align-items-center col-12 col-md-3">
+        <label for="volume" class="me-2">Volume</label>
+        <input
+          type="range"
+          class="form-range"
+          id="volume"
+          min="0"
+          max="100"
+          value="50"
+        />
+      </div>
+    </div>
 
     <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
     <!-- SCRIPTS -->
