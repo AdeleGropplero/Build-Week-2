@@ -17,11 +17,11 @@ body {
 /* aside in generale */
 #asideContent {
   background-color: #121212;
-  max-height: 80vh;
+  height: 80vh;
 }
 
 #scrolling-aside {
-  max-height: 65vh;
+  height: 62vh;
   position: sticky;
   top: 77px;
   overflow-y: scroll;
@@ -137,7 +137,7 @@ body {
   background-color: #121212;
   /* scroll */
   overflow-y: scroll;
-  max-height: 80vh;
+  height: 80vh;
   scrollbar-width: thin;
   scrollbar-color: #6f6e6e00 #121212;
 }
