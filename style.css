@@ -28,18 +28,24 @@ body {
 /* aside in generale */
 #asideContent {
   background-color: #121212;
-  max-height: 90vh;
+}
+
+#scrolling-aside {
+  max-height: 77vh;
   position: sticky;
   top: 77px;
   overflow-y: scroll;
 
   scrollbar-width: thin;
-  scrollbar-color: #555 #121212;
+  scrollbar-color: #6f6e6e00 #121212;
   /* -ms-overflow-track-style: none; */
 }
 
-/* #scrolling-aside {
-} */
+#scrolling-aside:hover {
+  scrollbar-width: thin;
+  scrollbar-color: #6f6e6e60 #121212;
+  /* -ms-overflow-track-style: none; */
+}
 
 #aside-fixed {
   padding-block: 20px;
@@ -68,6 +74,7 @@ body {
   display: none;
 }
 
+/* rendiamo scrollabili i bottoni dell'aside */
 .scrollable-container {
   position: relative;
   width: 100%;
@@ -85,6 +92,7 @@ body {
   transition: opacity 0.3s ease;
 }
 
+/* per l'ombra alle estremità con js */
 .scrollable-container::before {
   left: 0;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
@@ -112,7 +120,7 @@ body {
 }
 
 /* ------------------------------------------------------------------------------------------------------------ */
-/* cards */
+/* cards aside */
 
 .testi7 {
   font-size: 0.75rem;
@@ -151,8 +159,13 @@ body {
 
 #centralContent {
   scrollbar-width: thin;
-  scrollbar-color: #555 #121212;
+  scrollbar-color: #6e6e6e00 #121212;
   /* -ms-overflow-track-style: none; */
+}
+
+#centralContent:hover {
+  scrollbar-width: thin;
+  scrollbar-color: #6e6e6e63 #121212;
 }
 
 /* #centralContent::-webkit-scrollbar-track {
@@ -162,16 +175,107 @@ body {
   width: 8px;
 } */
 
-#centralContent .card {
+/* #centralContent .card {
   height: 100%;
-}
-#centralContent .card img {
+} */
+
+/* #centralContent .card img {
   object-fit: cover;
   height: 100%;
-}
+} */
 
-#centralContent .card-body {
+/* #centralContent .card-body {
   flex: 1 1 auto;
   padding-left: 4px;
   color: var(--bs-card-color);
+} */
+
+.orizontal-card-central {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.06);
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.orizontal-card-central:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.img-orizontal-card-central {
+  width: 52px;
+  height: 52px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+/* CARDS CENTRALI (verticali) */
+/* ------------------------------------------------------------------------------------------------------------ */
+/* scrollabili su x */
+.scrollableX-container-center {
+  position: relative;
+  width: 100%;
+}
+
+.scrollableX-container-center::before,
+.scrollableX-container-center::after {
+  content: "";
+  position: absolute;
+  top: 0;
+
+  width: 150px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.content-center {
+  overflow-x: auto; /* Attiva lo scroll orizzontale */
+  -ms-overflow-style: none; /* Nasconde la barra di scorrimento in IE e Edge */
+  scrollbar-width: none;
+}
+
+/* per l'ombra alle estremità con js */
+.scrollableX-container-center::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+  opacity: 0;
+}
+
+.scrollableX-container-center::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+  opacity: 1;
+}
+
+.scrollableX-container-center.start::before {
+  opacity: 1;
+}
+.scrollableX-container-center.start::after {
+  opacity: 0;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+.card-center-content {
+  padding: 12px;
+  border-radius: 10px;
+}
+.card-center-content:hover {
+  background-color: #212529;
+}
+
+.card-center-content > div {
+  background-color: transparent;
+}
+
+.card-center-content > div img {
+  object-fit: cover;
+  width: 154px;
+  height: 154px;
+}
+
+.card-center-content > div div {
+  padding: 2px;
+  padding-top: 10px;
 }

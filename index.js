@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------------------------------------------------------ */
-/* carosello */
+/* carosello  aside*/
 const content = document.querySelector(".content");
 const scrollableContainer = document.querySelector(".scrollable-container");
 
@@ -10,6 +10,23 @@ content.addEventListener("scroll", () => {
     scrollableContainer.classList.add("start");
   } else {
     scrollableContainer.classList.remove("start");
+  }
+});
+
+/* caroselli centrali*/
+
+const contentCenter = document.querySelector(".content-center");
+const scrollableXContainerCenter = document.querySelector(
+  ".scrollableX-container-center"
+);
+
+contentCenter.addEventListener("scroll", () => {
+  const scrollLeft = contentCenter.scrollLeft;
+
+  if (scrollLeft > 0) {
+    scrollableXContainerCenter.classList.add("start");
+  } else {
+    scrollableXContainerCenter.classList.remove("start");
   }
 });
 
