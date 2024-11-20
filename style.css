@@ -26,7 +26,13 @@ body {
   overflow-y: scroll;
 
   scrollbar-width: thin;
-  scrollbar-color: #555 #121212;
+  scrollbar-color: #6f6e6e00 #121212;
+  /* -ms-overflow-track-style: none; */
+}
+
+#scrolling-aside:hover {
+  scrollbar-width: thin;
+  scrollbar-color: #6f6e6e60 #121212;
   /* -ms-overflow-track-style: none; */
 }
 
@@ -142,8 +148,13 @@ body {
 
 #centralContent {
   scrollbar-width: thin;
-  scrollbar-color: #555 #121212;
+  scrollbar-color: #6e6e6e00 #121212;
   /* -ms-overflow-track-style: none; */
+}
+
+#centralContent:hover {
+  scrollbar-width: thin;
+  scrollbar-color: #6e6e6e63 #121212;
 }
 
 /* #centralContent::-webkit-scrollbar-track {
