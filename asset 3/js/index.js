@@ -209,9 +209,9 @@ const getArtists = function () {
     .then((oggetto) => {
       console.log(oggetto);
 
-      const randomIndex = Math.floor(Math.random() * availableParams.length);
+      /*    const randomIndex = Math.floor(Math.random() * availableParams.length);
       const randomParam = availableParams.splice(randomIndex, 1)[0];
-
+ */
       const randomNumber = Math.floor(Math.random() * 15);
 
       const contentsCenter = document.querySelectorAll(".singoli");
@@ -392,7 +392,7 @@ const getGeneri = function () {
 COME CAZZO FUNZIONA DEEZEER */
 
 window.addEventListener("DOMContentLoaded", function () {
-  for (let i = 0; i < 8; i++) {
+  /*   for (let i = 0; i < 8; i++) {
     getCards();
   }
 
@@ -410,5 +410,5 @@ window.addEventListener("DOMContentLoaded", function () {
 
   for (let i = 0; i < 12; i++) {
     getGeneri();
-  }
+  } */
 });
