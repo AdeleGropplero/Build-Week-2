@@ -337,3 +337,42 @@ body {
 .musicLeft {
   justify-content: center;
 }
+
+/* Card artist */
+
+.card-img-artist {
+  height: 40vh;
+}
+
+#cardArtist {
+  border: none;
+}
+#cardArtist h1 {
+  font-size: 80px;
+  font-weight: 800;
+}
+#cardArtist h1,
+p {
+  text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.65);
+}
+.artistButtons {
+  width: 30%;
+}
+.artistPlay {
+  color: #1fd760;
+  font-size: 55px;
+  margin-left: 1rem;
+}
+.followButtonA {
+  margin-top: 10.333%;
+}
+.followbutton {
+  margin-block: 33.333%;
+}
+.threeDots {
+  background-color: #121212;
+}
+
+.spaceminutes {
+  width: 15%;
+}
