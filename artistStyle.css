@@ -338,6 +338,10 @@ body {
   justify-content: center;
 }
 
+.navbar-collapse {
+  margin-top: 10px; /* Puoi aumentare o diminuire questo valore a seconda di quanto margine desideri */
+}
+
 /* Card artist */
 
 .card-img-artist {
