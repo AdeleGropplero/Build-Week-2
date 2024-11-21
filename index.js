@@ -71,8 +71,18 @@ document.addEventListener("DOMContentLoaded", function () {
 /* ------------------------------------------------------------------------------------------------------------ */
 /* Pare con API */
 
-const headerKeys = {
+const headerKeysAdele = {
   "x-rapidapi-key": "e749aa36bcmsh155faf2384d79a6p1a27bdjsn94b22b07ca21",
+  "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
+};
+
+const headerKeysDavide = {
+  "x-rapidapi-key": "79e73f6e23msh27cee76b6fac777p19859ejsnca84c5744e54",
+  "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
+};
+
+const headerKeysMatteuccio = {
+  "x-rapidapi-key": "4ab25cbbd8msh65706f56180c0dfp1e6d24jsna3b5d5575bb9",
   "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
 };
 
@@ -107,7 +117,7 @@ const getCards = function () {
   fetch(url + randomParam, {
     method: "GET",
     headers: {
-      "x-rapidapi-key": "e749aa36bcmsh155faf2384d79a6p1a27bdjsn94b22b07ca21",
+      "x-rapidapi-key": "79e73f6e23msh27cee76b6fac777p19859ejsnca84c5744e54",
       "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
     }
   })
@@ -124,46 +134,47 @@ const getCards = function () {
       console.log(oggetto);
       const randomNumber = Math.floor(Math.random() * 15);
 
-      /* const row = document.querySelector(".row-center-orizontal-cards"); */
-      const cols = document.querySelectorAll(".cols-center-orizontal-cards");
-      console.log(cols);
-      cols.forEach((content) => {
-        const cardCenterOrizontal = document.createElement("div");
-        cardCenterOrizontal.className = "card orizontal-card-central";
+      const row = document.querySelector(".row-center-orizontal-cards");
+      const col = document.createElement("div");
+      col.className =
+        "col-6 col-md-6 col-lg-4 col-xl-3 px-0 cols-center-orizontal-cards";
 
-        const divCard = document.createElement("div");
-        divCard.className = "d-flex";
+      const cardCenterOrizontal = document.createElement("div");
+      cardCenterOrizontal.className = "card orizontal-card-central";
 
-        const divCardInterno = document.createElement("div");
-        divCardInterno.className = "img-orizontal-card-central";
+      const divCard = document.createElement("div");
+      divCard.className = "d-flex";
 
-        const cardImg = document.createElement("img");
-        cardImg.className = "img-fluid rounded img-aside";
-        cardImg.src = `${oggetto.data[randomNumber].album.cover_small}`;
+      const divCardInterno = document.createElement("div");
+      divCardInterno.className = "img-orizontal-card-central";
 
-        const divInternissimo = document.createElement("div");
+      const cardImg = document.createElement("img");
+      cardImg.className = "img-fluid rounded img-aside";
+      cardImg.src = `${oggetto.data[randomNumber].album.cover_small}`;
 
-        const cardBody = document.createElement("div");
-        cardBody.className = "card-body py-1 ps-2";
+      const divInternissimo = document.createElement("div");
 
-        const h5 = document.createElement("h5");
-        h5.className = "card-title fs-6";
-        h5.innerText = `${oggetto.data[randomNumber].album.title}`;
-        h5.style.overflow = "hidden";
-        h5.style.maxHeight = "20px";
-        h5.style.maxWidth = "210px";
+      const cardBody = document.createElement("div");
+      cardBody.className = "card-body py-1 ps-2";
 
-        const p1 = document.createElement("p");
-        p1.className = "card-text testi7";
-        p1.innerText = `${oggetto.data[randomNumber].artist.name}`;
+      const h5 = document.createElement("h5");
+      h5.className = "card-title fs-6";
+      h5.innerText = `${oggetto.data[randomNumber].album.title}`;
+      h5.style.overflow = "hidden";
+      h5.style.maxHeight = "20px";
+      h5.style.maxWidth = "210px";
 
-        content.appendChild(cardCenterOrizontal);
-        cardCenterOrizontal.appendChild(divCard);
-        divCard.append(divCardInterno, divInternissimo);
-        divCardInterno.appendChild(cardImg);
-        divInternissimo.appendChild(cardBody);
-        cardBody.append(h5, p1);
-      });
+      const p1 = document.createElement("p");
+      p1.className = "card-text testi7";
+      p1.innerText = `${oggetto.data[randomNumber].artist.name}`;
+
+      row.appendChild(col);
+      col.appendChild(cardCenterOrizontal);
+      cardCenterOrizontal.appendChild(divCard);
+      divCard.append(divCardInterno, divInternissimo);
+      divCardInterno.appendChild(cardImg);
+      divInternissimo.appendChild(cardBody);
+      cardBody.append(h5, p1);
     })
     .catch((err) => console.log(err));
 };
@@ -239,7 +250,7 @@ const getArtists = function () {
 };
 
 let availableParams3 = [...params];
-const getRadio = function () {
+const getArtists2 = function () {
   /* In caso volessimo generare SOLO le canzoni di -1- artista basterà 
   mettere il math.random fuori */
   const randomIndex = Math.floor(Math.random() * availableParams3.length);
@@ -302,6 +313,81 @@ const getRadio = function () {
     .catch((err) => console.log(err));
 };
 
+let generi = [
+  "576" /* Classical instrumental */,
+  "87" /* Musica dal mondo */,
+  "455" /* Rock */,
+  "6" /* Electro */,
+  "84" /* Europa Vox */,
+  "10" /* Rock */,
+  "11" /* Musica francese di varietà*/,
+  "16" /* Pop */,
+  "18" /* Dance floor */
+];
+let availableParams4 = [...generi];
+const getGeneri = function () {
+  /* In caso volessimo generare SOLO le canzoni di -1- artista basterà 
+  mettere il math.random fuori */
+  const randomIndex = Math.floor(Math.random() * availableParams4.length);
+  const randomParam = availableParams4.splice(randomIndex, 1)[0];
+
+  console.log(`Artista selezionato: ${randomParam}`);
+
+  fetch(url + randomParam, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": "4ab25cbbd8msh65706f56180c0dfp1e6d24jsna3b5d5575bb9",
+      "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
+    }
+  })
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error(
+          `Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`
+        );
+      }
+    })
+    .then((oggetto) => {
+      console.log(oggetto);
+      const randomNumber = Math.floor(Math.random() * 15);
+
+      const contentsCenter = document.querySelectorAll(".generi");
+
+      contentsCenter.forEach((content) => {
+        const cardCenterContent = document.createElement("div");
+        cardCenterContent.className = "card-center-content";
+
+        const divCard = document.createElement("div");
+        divCard.className = "card border-0";
+
+        const cardImg = document.createElement("img");
+        cardImg.className = "card-img-top rounded-4";
+        cardImg.src = `${oggetto.data[randomNumber].album.cover_medium}`;
+
+        const cardBody = document.createElement("div");
+        cardBody.className = "card-body";
+
+        const p = document.createElement("p");
+        p.className = "card-title";
+        p.innerText = `${oggetto.data[randomNumber].album.title}`;
+        p.style.overflow = "hidden";
+        p.style.maxHeight = "50px";
+
+        const p1 = document.createElement("p");
+        p1.className = "card-text";
+        p1.innerText = `${oggetto.data[randomNumber].artist.name}`;
+
+        content.appendChild(cardCenterContent);
+        cardCenterContent.appendChild(divCard);
+        divCard.append(cardImg, cardBody);
+        cardBody.append(p, p1);
+      });
+    })
+    .catch((err) => console.log(err));
+};
+
 /* Creare getPlaylist, ricorda che ci vuole l'id, TROVARE SOLUZIONE O CAPIRE
 COME CAZZO FUNZIONA DEEZEER */
 
@@ -314,14 +400,15 @@ window.addEventListener("DOMContentLoaded", function () {
     for (let i = 0; i < 12; i++) {
       getArtists();
     }
-  }, 200);
+  }, 500);
 
   setTimeout(() => {
     for (let i = 0; i < 12; i++) {
-      getRadio();
+      getArtists2();
     }
-  }, 400);
-  /*  for (let i = 0; i < 12; i++) {
-    getRadio();
-  } */
+  }, 900);
+
+  for (let i = 0; i < 12; i++) {
+    getGeneri();
+  }
 });
