@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AlbumPage Spotify</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./asset 3/css/circular-font.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="./asset 3/css/albumStyle.css" />
+  </head>
+  <body data-bs-theme="dark" class="bg-black">
+    <div class="mx-5">
+      <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+      <!-- NAV BAR PRINCIPALE -->
+      <nav id="nav" class="navbar bg-black pe-2">
+        <div class="container-fluid px-0">
+          <button
+            class="navbar-brand bg-black border border-black py-0 text-decoration-none"
+          >
+            <a href="./index.html">
+              <i class="bi bi-spotify fs-1 text-white"></i>
+            </a>
+          </button>
+          <form class="d-flex" role="search">
+            <button class="btn me-2 bg-dark rounded-circle" type="submit">
+              <i class="bi bi-house-door mouseHover fs-5 text-secondary"></i>
+            </button>
+
+            <div class="align-content-center" style="max-width: 400px">
+              <a href="./search.html" class="text-decoration-none">
+                <button
+                  type="button"
+                  aria-label="Search"
+                  class="DocSearch DocSearch-Button d-flex align-items-center justify-content-between p-2 px-3 bg-dark rounded-pill btn"
+                  style="width: 400px"
+                >
+                  <div>
+                    <div class="DocSearch-Button-Container d-flex">
+                      <i class="bi bi-search mouseHover text-secondary"></i>
+                      <input
+                        type="text"
+                        placeholder="Cosa cerchi?"
+                        class="DocSearch-Button-Placeholder ps-2 mouseHover text-secondary border-0 bg-transparent w-100"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="DocSearch-Button-Keys ps-3 mouseHover border-start border-gray"
+                  >
+                    <svg
+                      width="24px"
+                      data-encore-id="icon"
+                      role="img"
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      class="Svg-sc-ytk21e-0 svg bneLcE"
+                      fill="gray"
+                    >
+                      <path
+                        d="M15 15.5c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z"
+                      ></path>
+                      <path
+                        d="M1.513 9.37A1 1 0 0 1 2.291 9h19.418a1 1 0 0 1 .979 1.208l-2.339 11a1 1 0 0 1-.978.792H4.63a1 1 0 0 1-.978-.792l-2.339-11a1 1 0 0 1 .201-.837zM3.525 11l1.913 9h13.123l1.913-9H3.525zM4 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4h-2V3H6v3H4V2z"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
+              </a>
+            </div>
+          </form>
+
+          <form class="d-flex">
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-secondary dropdown-toggle border-0 bgspecial"
+                data-bs-toggle="dropdown"
+                data-bs-display="static"
+                aria-expanded="false"
+              >
+                <i class="bi bi-person-fill text-black"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <button class="btn me-2" type="button">
+                    <a
+                      href="./iscriviti.html"
+                      class="text-white text-decoration-none"
+                      >Iscriviti</a
+                    >
+                  </button>
+                </li>
+                <li>
+                  <button class="btn me-2" type="button">
+                    <a
+                      href="./login.html"
+                      class="text-white text-decoration-none"
+                      >Accedi</a
+                    >
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </form>
+        </div>
+      </nav>
+
+      <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+      <!-- NAVBAR LATERALE SX CON PLAYLISTS-->
+
+      <div id="dad" class="bg-black">
+        <div class="row mx-0 gx-2">
+          <div class="col-3">
+            <div id="asideContent" class="px-2 rounded">
+              <!-- library -->
+              <div id="aside-fixed">
+                <div
+                  id="library"
+                  class="d-flex align-items-center justify-content-between px-2"
+                >
+                  <button
+                    class="btn encore-text-body-medium-bold d-flex align-items-center px-0"
+                    aria-label="Comprimi La tua libreria"
+                    data-encore-id="buttonTertiary"
+                  >
+                    <div>
+                      <svg
+                        width="28px"
+                        data-encore-id="icon"
+                        role="img"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        class="Svg-sc-ytk21e-0 svg bneLcE me-3"
+                        fill="gray"
+                      >
+                        <path
+                          d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="text-secondary mouseHover fs-5">
+                      Your Library
+                    </div>
+                  </button>
+
+                  <button class="btn">
+                    <i class="bi bi-plus-lg mouseHover text-secondary fs-5"></i>
+                  </button>
+                </div>
+
+                <!-- carosello -->
+                <div class="px-2">
+                  <div class="mt-3 scrollable-container">
+                    <div class="d-flex gap-2 content">
+                      <!-- Bottoni allineati orizzontalmente con spazio tra di loro -->
+                      <button class="btn rounded-pill bg-dark px-3 py-1">
+                        Playlists
+                      </button>
+                      <button class="btn rounded-pill bg-dark px-3 py-1">
+                        Artists
+                      </button>
+                      <button class="btn rounded-pill bg-dark px-3 py-1">
+                        Albums
+                      </button>
+                      <button
+                        class="btn rounded-pill bg-dark px-3 py-1 flex-grow-1"
+                        style="white-space: nowrap"
+                      >
+                        Podcast & Shows
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--DIV SEARCH + DROPDWN -->
+              <div id="scrolling-aside">
+                <div
+                  id="containerSearchAside"
+                  class="d-flex justify-content-between mt-3 align-items-center px-2"
+                >
+                  <div class="d-flex align-items-center" id="search-container">
+                    <button id="search-btn-aside" class="btn px-0">
+                      <i
+                        class="bi bi-search text-secondary mouseHover fs-5"
+                      ></i>
+                    </button>
+                    <input
+                      type="text"
+                      id="search-bar"
+                      class="search-bar search-btn-aside"
+                      placeholder="Cerca..."
+                      aria-hidden="true"
+                    />
+                  </div>
+
+                  <div class="dropdown">
+                    <button
+                      aria-controls="sort-and-view-picker"
+                      class="btn px-0 d-flex align-items-center dropdown-toggle text-secondary"
+                      aria-label="Visualizzazione Recenti, Elenco"
+                      data-encore-id="buttonTertiary"
+                      data-bs-toggle="dropdown"
+                      type="button"
+                      aria-expanded="false"
+                    >
+                      <div id="recentiScoparsa">
+                        <span
+                          class="me-2 mouseHover fs-5"
+                          data-encore-id="text"
+                          data-sortbox-label="true"
+                          >Recenti
+                        </span>
+                      </div>
+                      <div>
+                        <i
+                          class="bi bi-list-ul fs-3 text-secondary mouseHover"
+                        ></i>
+                      </div>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#">Action</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Another action</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#"
+                          >Something else here</a
+                        >
+                      </li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-------------------------------------------------------------------------------------------------------------------------------------- -->
+                <!-- CARDS  -->
+
+                <div id="containerCards">
+                  <div class="card card-aside">
+                    <div class="d-flex">
+                      <div class="p-2">
+                        <img
+                          src="./asset 3/imgs/main/image-1.jpg"
+                          class="img-fluid rounded img-aside"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="">
+                        <div class="card-body px-0 py-2 overflow-hidden">
+                          <h5 class="card-title fs-6">Card title</h5>
+                          <p class="card-text testi7">Categoria - Artisti</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card card-aside">
+                    <div class="d-flex">
+                      <div class="p-2">
+                        <img
+                          src="./asset 3/imgs/main/image-1.jpg"
+                          class="img-fluid rounded img-aside"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="">
+                        <div class="card-body px-0 py-2 overflow-hidden">
+                          <h5 class="card-title fs-6">Card title</h5>
+                          <p class="card-text testi7">Categoria - Artisti</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card card-aside">
+                    <div class="d-flex">
+                      <div class="p-2">
+                        <img
+                          src="./asset 3/imgs/main/image-1.jpg"
+                          class="img-fluid rounded img-aside"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="">
+                        <div class="card-body px-0 py-2 overflow-hidden">
+                          <h5 class="card-title fs-6">Card title</h5>
+                          <p class="card-text testi7">Categoria - Artisti</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card card-aside">
+                    <div class="d-flex">
+                      <div class="p-2">
+                        <img
+                          src="./asset 3/imgs/main/image-1.jpg"
+                          class="img-fluid rounded img-aside"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="">
+                        <div class="card-body px-0 py-2 overflow-hidden">
+                          <h5 class="card-title fs-6">Card title</h5>
+                          <p class="card-text testi7">Categoria - Artisti</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card card-aside">
+                    <div class="d-flex">
+                      <div class="p-2">
+                        <img
+                          src="./asset 3/imgs/main/image-1.jpg"
+                          class="img-fluid rounded img-aside"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="">
+                        <div class="card-body px-0 py-2 overflow-hidden">
+                          <h5 class="card-title fs-6">Card title</h5>
+                          <p class="card-text testi7">Categoria - Artisti</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card card-aside">
+                    <div class="d-flex">
+                      <div class="p-2">
+                        <img
+                          src="./asset 3/imgs/main/image-1.jpg"
+                          class="img-fluid rounded img-aside"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="">
+                        <div class="card-body px-0 py-2 overflow-hidden">
+                          <h5 class="card-title fs-6">Card title</h5>
+                          <p class="card-text testi7">Categoria - Artisti</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card card-aside">
+                    <div class="d-flex">
+                      <div class="p-2">
+                        <img
+                          src="./asset 3/imgs/main/image-1.jpg"
+                          class="img-fluid rounded img-aside"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="">
+                        <div class="card-body px-0 py-2 overflow-hidden">
+                          <h5 class="card-title fs-6">Card title</h5>
+                          <p class="card-text testi7">Categoria - Artisti</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card card-aside">
+                    <div class="d-flex">
+                      <div class="p-2">
+                        <img
+                          src="./asset 3/imgs/main/image-1.jpg"
+                          class="img-fluid rounded img-aside"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="">
+                        <div class="card-body px-0 py-2 overflow-hidden">
+                          <h5 class="card-title fs-6">Card title</h5>
+                          <p class="card-text testi7">Categoria - Artisti</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card card-aside">
+                    <div class="d-flex">
+                      <div class="p-2">
+                        <img
+                          src="./asset 3/imgs/main/image-1.jpg"
+                          class="img-fluid rounded img-aside"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="">
+                        <div class="card-body px-0 py-2 overflow-hidden">
+                          <h5 class="card-title fs-6">Card title</h5>
+                          <p class="card-text testi7">Categoria - Artisti</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card card-aside">
+                    <div class="d-flex">
+                      <div class="p-2">
+                        <img
+                          src="./asset 3/imgs/main/image-1.jpg"
+                          class="img-fluid rounded img-aside"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="">
+                        <div class="card-body px-0 py-2 overflow-hidden">
+                          <h5 class="card-title fs-6">Card title</h5>
+                          <p class="card-text testi7">Categoria - Artisti</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card card-aside">
+                    <div class="d-flex">
+                      <div class="p-2">
+                        <img
+                          src="./asset 3/imgs/main/image-1.jpg"
+                          class="img-fluid rounded img-aside"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="">
+                        <div class="card-body px-0 py-2 overflow-hidden">
+                          <h5 class="card-title fs-6">Card title</h5>
+                          <p class="card-text testi7">Categoria - Artisti</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card card-aside">
+                    <div class="d-flex">
+                      <div class="p-2">
+                        <img
+                          src="./asset 3/imgs/main/image-1.jpg"
+                          class="img-fluid rounded img-aside"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="">
+                        <div class="card-body px-0 py-2 overflow-hidden">
+                          <h5 class="card-title fs-6">Card title</h5>
+                          <p class="card-text testi7">Categoria - Artisti</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card card-aside">
+                    <div class="d-flex">
+                      <div class="p-2">
+                        <img
+                          src="./asset 3/imgs/main/image-1.jpg"
+                          class="img-fluid rounded img-aside"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="">
+                        <div class="card-body px-0 py-2 overflow-hidden">
+                          <h5 class="card-title fs-6">Card title</h5>
+                          <p class="card-text testi7">Categoria - Artisti</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card card-aside">
+                    <div class="d-flex">
+                      <div class="p-2">
+                        <img
+                          src="./asset 3/imgs/main/image-1.jpg"
+                          class="img-fluid rounded img-aside"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="">
+                        <div class="card-body px-0 py-2 overflow-hidden">
+                          <h5 class="card-title fs-6">Card title</h5>
+                          <p class="card-text testi7">Categoria - Artisti</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card card-aside">
+                    <div class="d-flex">
+                      <div class="p-2">
+                        <img
+                          src="./asset 3/imgs/main/image-1.jpg"
+                          class="img-fluid rounded img-aside"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="">
+                        <div class="card-body px-0 py-2 overflow-hidden">
+                          <h5 class="card-title fs-6">Card title</h5>
+                          <p class="card-text testi7">Categoria - Artisti</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-------------------------------------------------------------------------------------------------------------------------------------- -->
+                  <!-- Fine CARDS  -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+          <!-- CONTENUTO CENTRALE -->
+          <div class="col-9">
+            <div id="centralContent">
+              <!-- intestazione album -->
+              <div id="cardAlbum" class="card rounded-top border-0">
+                <div class="album-img d-flex px-3 gap-3 py-4">
+                  <img
+                    src="data:image/jpeg;base64,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"
+                    alt="..."
+                    style="
+                      max-width: 18%;
+                      height: 18%;
+                      border-radius: 6px;
+                      object-fit: contain;
+                      box-shadow: 2px 1px 20px black;
+                    "
+                  />
+
+                  <div
+                    class="album-title d-flex flex-column justify-content-between"
+                  >
+                    <p class="py-1">Album</p>
+
+                    <h1 class="fw-bold titleAlbum">TITOLO ALBUM</h1>
+                    <div class="d-flex align-items-baseline">
+                      <img
+                        src="data:image/jpeg;base64,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"
+                        alt=""
+                        class="rounded-circle"
+                        style="width: 12%; object-fit: contain"
+                      />
+                      <div class="px-2 align-self-end">
+                        <h6 class="fw-bold">Nome artista</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+              <!-- Bottoni Artisti -->
+              <div class="artistContent">
+                <div class="d-flex">
+                  <div class="align-items-baseline d-inline-flex">
+                    <div class="rounded-circle">
+                      <button class="btn">
+                        <i class="artistPlay bi bi-play-circle-fill"></i>
+                      </button>
+                    </div>
+                    <div class="followButtonA">
+                      <button class="bg-transparent border border-0">
+                        <div class="align-self-center fs-4">
+                          <i class="bi bi-plus-circle"></i>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="px-3 py-1 d-flex align-content-center justify-content-between w-100 align-items-center align-self-center"
+                  >
+                    <div class="d-flex">
+                      <button class="threeDots border border-0">
+                        <i class="bi bi-three-dots fs-3"></i>
+                      </button>
+                    </div>
+
+                    <div class="dropdown">
+                      <button
+                        aria-controls="sort-and-view-picker"
+                        class="btn px-0 d-flex align-items-center dropdown-toggle text-secondary"
+                        aria-label="Visualizzazione Recenti, Elenco"
+                        data-encore-id="buttonTertiary"
+                        data-bs-toggle="dropdown"
+                        type="button"
+                        aria-expanded="false"
+                      >
+                        <div id="recentiScoparsa">
+                          <span
+                            class="me-2 mouseHover fs-6"
+                            data-encore-id="text"
+                            data-sortbox-label="true"
+                            >Elenco
+                          </span>
+                        </div>
+                        <div>
+                          <i
+                            class="bi bi-list-ul fs-3 text-secondary mouseHover"
+                          ></i>
+                        </div>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item">Visualizza come:</li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Compatta</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Elenco</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-cards-central px-4">
+                  <div class="textHeading d-flex align-items-center mt-3">
+                    <div class="d-flex px-3">
+                      <cite>#</cite>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between widthspecial align-items-center"
+                    >
+                      <div
+                        class="d-flex px-3 align-items-baseline paddingspecial"
+                      >
+                        <h6 class="px-3">Titolo</h6>
+                      </div>
+                      <div class="d-flex">
+                        <i class="bi bi-clock"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                  <ol>
+                    <div id="containerCards">
+                      <li>
+                        <div class="card card-aside justify-content-between">
+                          <div class="d-flex">
+                            <div
+                              class="px-3 py-1 d-flex align-content-center justify-content-between w-100 align-items-center align-self-center"
+                            >
+                              <div
+                                class="px-0 py-2 overflow-hidden align-self-end"
+                              >
+                                <h5 class="card-title fs-6">Titolo Canzone</h5>
+                              </div>
+
+                              <div class="spaceminutes py-0">
+                                <div class="d-flex justify-content-between">
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-plus-circle"></i>
+                                    </div>
+                                  </button>
+                                  <div
+                                    class="align-self-end"
+                                    style="padding-top: 14px"
+                                  >
+                                    <p>Min</p>
+                                  </div>
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-three-dots"></i>
+                                    </div>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="card card-aside justify-content-between">
+                          <div class="d-flex">
+                            <div
+                              class="px-3 py-1 d-flex align-content-center justify-content-between w-100 align-items-center align-self-center"
+                            >
+                              <div
+                                class="px-0 py-2 overflow-hidden align-self-end"
+                              >
+                                <h5 class="card-title fs-6">Titolo Canzone</h5>
+                              </div>
+
+                              <div class="spaceminutes py-0">
+                                <div class="d-flex justify-content-between">
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-plus-circle"></i>
+                                    </div>
+                                  </button>
+                                  <div
+                                    class="align-self-end"
+                                    style="padding-top: 14px"
+                                  >
+                                    <p>Min</p>
+                                  </div>
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-three-dots"></i>
+                                    </div>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="card card-aside justify-content-between">
+                          <div class="d-flex">
+                            <div
+                              class="px-3 py-1 d-flex align-content-center justify-content-between w-100 align-items-center align-self-center"
+                            >
+                              <div
+                                class="px-0 py-2 overflow-hidden align-self-end"
+                              >
+                                <h5 class="card-title fs-6">Titolo Canzone</h5>
+                              </div>
+
+                              <div class="spaceminutes py-0">
+                                <div class="d-flex justify-content-between">
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-plus-circle"></i>
+                                    </div>
+                                  </button>
+                                  <div
+                                    class="align-self-end"
+                                    style="padding-top: 14px"
+                                  >
+                                    <p>Min</p>
+                                  </div>
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-three-dots"></i>
+                                    </div>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card card-aside justify-content-between">
+                          <div class="d-flex">
+                            <div
+                              class="px-3 py-1 d-flex align-content-center justify-content-between w-100 align-items-center align-self-center"
+                            >
+                              <div
+                                class="px-0 py-2 overflow-hidden align-self-end"
+                              >
+                                <h5 class="card-title fs-6">Titolo Canzone</h5>
+                              </div>
+
+                              <div class="spaceminutes py-0">
+                                <div class="d-flex justify-content-between">
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-plus-circle"></i>
+                                    </div>
+                                  </button>
+                                  <div
+                                    class="align-self-end"
+                                    style="padding-top: 14px"
+                                  >
+                                    <p>Min</p>
+                                  </div>
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-three-dots"></i>
+                                    </div>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card card-aside justify-content-between">
+                          <div class="d-flex">
+                            <div
+                              class="px-3 py-1 d-flex align-content-center justify-content-between w-100 align-items-center align-self-center"
+                            >
+                              <div
+                                class="px-0 py-2 overflow-hidden align-self-end"
+                              >
+                                <h5 class="card-title fs-6">Titolo Canzone</h5>
+                              </div>
+
+                              <div class="spaceminutes py-0">
+                                <div class="d-flex justify-content-between">
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-plus-circle"></i>
+                                    </div>
+                                  </button>
+                                  <div
+                                    class="align-self-end"
+                                    style="padding-top: 14px"
+                                  >
+                                    <p>Min</p>
+                                  </div>
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-three-dots"></i>
+                                    </div>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card card-aside justify-content-between">
+                          <div class="d-flex">
+                            <div
+                              class="px-3 py-1 d-flex align-content-center justify-content-between w-100 align-items-center align-self-center"
+                            >
+                              <div
+                                class="px-0 py-2 overflow-hidden align-self-end"
+                              >
+                                <h5 class="card-title fs-6">Titolo Canzone</h5>
+                              </div>
+
+                              <div class="spaceminutes py-0">
+                                <div class="d-flex justify-content-between">
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-plus-circle"></i>
+                                    </div>
+                                  </button>
+                                  <div
+                                    class="align-self-end"
+                                    style="padding-top: 14px"
+                                  >
+                                    <p>Min</p>
+                                  </div>
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-three-dots"></i>
+                                    </div>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card card-aside justify-content-between">
+                          <div class="d-flex">
+                            <div
+                              class="px-3 py-1 d-flex align-content-center justify-content-between w-100 align-items-center align-self-center"
+                            >
+                              <div
+                                class="px-0 py-2 overflow-hidden align-self-end"
+                              >
+                                <h5 class="card-title fs-6">Titolo Canzone</h5>
+                              </div>
+
+                              <div class="spaceminutes py-0">
+                                <div class="d-flex justify-content-between">
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-plus-circle"></i>
+                                    </div>
+                                  </button>
+                                  <div
+                                    class="align-self-end"
+                                    style="padding-top: 14px"
+                                  >
+                                    <p>Min</p>
+                                  </div>
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-three-dots"></i>
+                                    </div>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card card-aside justify-content-between">
+                          <div class="d-flex">
+                            <div
+                              class="px-3 py-1 d-flex align-content-center justify-content-between w-100 align-items-center align-self-center"
+                            >
+                              <div
+                                class="px-0 py-2 overflow-hidden align-self-end"
+                              >
+                                <h5 class="card-title fs-6">Titolo Canzone</h5>
+                              </div>
+
+                              <div class="spaceminutes py-0">
+                                <div class="d-flex justify-content-between">
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-plus-circle"></i>
+                                    </div>
+                                  </button>
+                                  <div
+                                    class="align-self-end"
+                                    style="padding-top: 14px"
+                                  >
+                                    <p>Min</p>
+                                  </div>
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-three-dots"></i>
+                                    </div>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="card card-aside justify-content-between">
+                          <div class="d-flex">
+                            <div
+                              class="px-3 py-1 d-flex align-content-center justify-content-between w-100 align-items-center align-self-center"
+                            >
+                              <div
+                                class="px-0 py-2 overflow-hidden align-self-end"
+                              >
+                                <h5 class="card-title fs-6">Titolo Canzone</h5>
+                              </div>
+
+                              <div class="spaceminutes py-0">
+                                <div class="d-flex justify-content-between">
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-plus-circle"></i>
+                                    </div>
+                                  </button>
+                                  <div
+                                    class="align-self-end"
+                                    style="padding-top: 14px"
+                                  >
+                                    <p>Min</p>
+                                  </div>
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-three-dots"></i>
+                                    </div>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="card card-aside justify-content-between">
+                          <div class="d-flex">
+                            <div
+                              class="px-3 py-1 d-flex align-content-center justify-content-between w-100 align-items-center align-self-center"
+                            >
+                              <div
+                                class="px-0 py-2 overflow-hidden align-self-end"
+                              >
+                                <h5 class="card-title fs-6">Titolo Canzone</h5>
+                              </div>
+
+                              <div class="spaceminutes py-0">
+                                <div class="d-flex justify-content-between">
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-plus-circle"></i>
+                                    </div>
+                                  </button>
+                                  <div
+                                    class="align-self-end"
+                                    style="padding-top: 14px"
+                                  >
+                                    <p>Min</p>
+                                  </div>
+                                  <button
+                                    class="bg-transparent border border-0"
+                                  >
+                                    <div class="align-self-center">
+                                      <i class="bi bi-three-dots"></i>
+                                    </div>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </div>
+                  </ol>
+                  <hr />
+                </div>
+              </div>
+              <!-- inizio cards scrollabili su x -->
+
+              <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+              <!-- sample di partenza -->
+
+              <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+              <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+              <!-- footer -->
+              <div class="container">
+                <footer class="pt-5 pb-2 px-4">
+                  <div class="row">
+                    <div class="col-6 col-md-3 mb-3">
+                      <h5>Azienda</h5>
+                      <ul class="nav flex-column">
+                        <li class="nav-item mb-2">
+                          <a href="#" class="nav-link p-0 text-body-secondary"
+                            >Chi siamo?</a
+                          >
+                        </li>
+                        <li class="nav-item mb-2">
+                          <a href="#" class="nav-link p-0 text-body-secondary"
+                            >Opportunità di lavoro</a
+                          >
+                        </li>
+                        <li class="nav-item mb-2">
+                          <a href="#" class="nav-link p-0 text-body-secondary"
+                            >For the Record</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="col-6 col-md-3 mb-3">
+                      <h5>Community</h5>
+                      <ul class="nav flex-column">
+                        <li class="nav-item mb-2">
+                          <a href="#" class="nav-link p-0 text-body-secondary"
+                            >Per artisti</a
+                          >
+                        </li>
+                        <li class="nav-item mb-2">
+                          <a href="#" class="nav-link p-0 text-body-secondary"
+                            >Sviluppatori</a
+                          >
+                        </li>
+                        <li class="nav-item mb-2">
+                          <a href="#" class="nav-link p-0 text-body-secondary"
+                            >Pubblicità</a
+                          >
+                        </li>
+                        <li class="nav-item mb-2">
+                          <a href="#" class="nav-link p-0 text-body-secondary"
+                            >Investitori</a
+                          >
+                        </li>
+                        <li class="nav-item mb-2">
+                          <a href="#" class="nav-link p-0 text-body-secondary"
+                            >Venditori</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="col-6 col-md-3 mb-3">
+                      <h5>Link utili</h5>
+                      <ul class="nav flex-column">
+                        <li class="nav-item mb-2">
+                          <a href="#" class="nav-link p-0 text-body-secondary"
+                            >Assistenza</a
+                          >
+                        </li>
+                        <li class="nav-item mb-2">
+                          <a href="#" class="nav-link p-0 text-body-secondary"
+                            >App per cellulare gratuita</a
+                          >
+                        </li>
+                        <li class="nav-item mb-2">
+                          <a href="#" class="nav-link p-0 text-body-secondary"
+                            >Diritti del consumatore</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="col-6 col-md-3 mb-3">
+                      <h5>Piano Spotify</h5>
+                      <ul class="nav flex-column">
+                        <li class="nav-item mb-2">
+                          <a href="#" class="nav-link p-0 text-body-secondary"
+                            >Premium Individual</a
+                          >
+                        </li>
+                        <li class="nav-item mb-2">
+                          <a href="#" class="nav-link p-0 text-body-secondary"
+                            >Premium Duo</a
+                          >
+                        </li>
+                        <li class="nav-item mb-2">
+                          <a href="#" class="nav-link p-0 text-body-secondary"
+                            >Premium Family</a
+                          >
+                        </li>
+                        <li class="nav-item mb-2">
+                          <a href="#" class="nav-link p-0 text-body-secondary"
+                            >Premium Student</a
+                          >
+                        </li>
+                        <li class="nav-item mb-2">
+                          <a href="#" class="nav-link p-0 text-body-secondary"
+                            >Spotify Free</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div
+                    class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"
+                  >
+                    <p>© 2024 Spotify AB</p>
+                    <ul class="list-unstyled d-flex">
+                      <li class="ms-3">
+                        <a class="link-body-emphasis" href="#"
+                          ><i class="bi bi-instagram"></i>
+                        </a>
+                      </li>
+                      <li class="ms-3">
+                        <a class="link-body-emphasis" href="#"
+                          ><i class="bi bi-twitter-x"></i>
+                        </a>
+                      </li>
+                      <li class="ms-3">
+                        <a class="link-body-emphasis" href="#"
+                          ><i class="bi bi-facebook"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </footer>
+              </div>
+
+              <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+              <!-- fine footerr -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+    <!-- play bar -->
+    <div
+      class="musicContainer d-flex flex-column flex-md-row align-items-center justify-content-between p-2 bg-black pb-3"
+    >
+      <!-- Sinistra: Immagine e testo -->
+      <div
+        class="musicLeft d-flex align-items-center col-12 col-md-3 mb-2 mb-md-0"
+      >
+        <div class="musicImg rounded-3">
+          <img
+            src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+            class="img-fluid rounded-3 mt-2"
+          />
+        </div>
+        <div class="musicText ms-2">
+          <h6>Non me la menare</h6>
+          <p>883</p>
+        </div>
+      </div>
+
+      <!-- Centro: Controlli musica -->
+      <div
+        class="musicControls d-flex flex-column align-items-center col-12 col-md-6 mb-2 mb-md-0"
+      >
+        <div class="musicButtons d-flex align-items-center">
+          <button class="btn me-2">
+            <i class="bi bi-skip-start-fill fs-2"></i>
+          </button>
+          <button class="btn">
+            <i class="bi bi-play-circle-fill fs-2"></i>
+          </button>
+          <button class="btn ms-2">
+            <i class="bi bi-skip-end-fill fs-2"></i>
+          </button>
+        </div>
+        <div class="d-inline-flex align-items-center w-100 mt-2">
+          <div class="me-2">0:00</div>
+          <input
+            type="range"
+            class="form-range"
+            id="musicRange"
+            min="0"
+            max="100"
+            value="50"
+          />
+
+          <div class="ms-2">3:30</div>
+        </div>
+      </div>
+
+      <!-- Destra: Controllo volume -->
+      <div class="musicRight d-flex align-items-center col-12 col-md-3">
+        <label for="volume" class="me-2">Volume</label>
+        <input
+          type="range"
+          class="form-range"
+          id="volume"
+          min="0"
+          max="100"
+          value="50"
+        />
+      </div>
+    </div>
+
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+    <!-- SCRIPTS -->
+    <script src="./asset 3/js/index.js"></script>
+    <script src="./asset 3/js/album.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

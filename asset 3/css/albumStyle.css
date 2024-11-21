@@ -1,0 +1,402 @@
+body {
+    font-family: "Circular", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  /* ------------------------------------------------------------------------------------------------------------ */
+  /* navbar */
+  
+  #nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  .topSearch:hover {
+    background-color: #555;
+    color: white;
+    border-color: gray 2px solid;
+  }
+  .mouseHover:hover,
+  .svg:hover {
+    color: white !important;
+    fill: white;
+    border-left: white;
+  }
+  
+  /* ------------------------------------------------------------------------------------------------------------ */
+  /* aside in generale */
+  #asideContent {
+    background-color: #121212;
+    height: 80vh;
+  }
+  
+  #scrolling-aside {
+    height: 63vh;
+    position: sticky;
+    top: 77px;
+    overflow-y: auto;
+  
+    scrollbar-width: thin;
+    scrollbar-color: #6f6e6e00 #121212;
+    /* -ms-overflow-track-style: none; */
+  }
+  
+  #scrolling-aside:hover {
+    scrollbar-width: thin;
+    scrollbar-color: #6f6e6e60 #121212;
+    /* -ms-overflow-track-style: none; */
+  }
+  
+  #aside-fixed {
+    padding-block: 20px;
+    background-color: #121212;
+    position: sticky;
+    top: 0px;
+    z-index: 999;
+  }
+  
+  /* #containerCards {
+  } */
+  
+  /* carosello */
+  .dropdown-toggle::after {
+    display: none;
+  }
+  
+  .content {
+    overflow-x: auto; /* Attiva lo scroll orizzontale */
+    -ms-overflow-style: none; /* Nasconde la barra di scorrimento in IE e Edge */
+    scrollbar-width: none; /* Nasconde la barra di scorrimento in Firefox */
+  }
+  
+  /* Nasconde la barra di scorrimento in WebKit browsers (Chrome, Safari, etc.) */
+  .d-flex::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* rendiamo scrollabili i bottoni dell'aside */
+  .scrollable-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .scrollable-container::before,
+  .scrollable-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* per l'ombra alle estremità con js */
+  .scrollable-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    opacity: 0;
+  }
+  
+  .scrollable-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    opacity: 1;
+  }
+  
+  .scrollable-container.start::before {
+    opacity: 1;
+  }
+  .scrollable-container.start::after {
+    opacity: 0;
+  }
+  
+  /* ------------------------------------------------------------------------------------------------------------ */
+  /* Search aside + dropdown */
+  
+  .search-btn-aside {
+    display: none;
+  }
+  
+  /* ------------------------------------------------------------------------------------------------------------ */
+  /* cards aside */
+  
+  .testi7 {
+    font-size: 0.75rem;
+  }
+  
+  .img-aside {
+    width: 52px;
+    height: 52px;
+  }
+  
+  .card-aside {
+    border: none;
+    background-color: transparent;
+  }
+  
+  .card-aside:hover {
+    background-color: #212529;
+  }
+  
+  /* CONTENUTO CENTRALE */
+  
+  #buttonCenter {
+    position: sticky;
+    top: 0;
+    padding-top: 20px;
+    background-color: #121212;
+    z-index: 898;
+  }
+  
+  #centralContent {
+    overflow: hidden;
+    background-color: #121212;
+    height: 80vh;
+    overflow-y: scroll;
+  }
+  
+  #centralContent {
+    scrollbar-width: thin;
+    scrollbar-color: #6e6e6e00 #121212;
+    /* -ms-overflow-track-style: none; */
+  }
+  
+  #centralContent:hover {
+    scrollbar-width: thin;
+    scrollbar-color: #6e6e6e63 #121212;
+  }
+  
+  .orizontal-card-central {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.06);
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+  
+  .orizontal-card-central:hover {
+    background-color: rgba(255, 255, 255, 0.16);
+  }
+  
+  .img-orizontal-card-central {
+    width: 52px;
+    height: 52px;
+  }
+  
+  /* ------------------------------------------------------------------------------------------------------------ */
+  
+  /* CARDS CENTRALI (verticali) */
+  /* ------------------------------------------------------------------------------------------------------------ */
+  /* scrollabili su x */
+  .scrollableX-container-center {
+    position: relative;
+    width: 100%;
+  }
+  
+  .scrollableX-container-center::before,
+  .scrollableX-container-center::after {
+    content: "";
+    position: absolute;
+    top: 0;
+  
+    width: 150px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  .content-center {
+    overflow-x: auto; /* Attiva lo scroll orizzontale */
+    -ms-overflow-style: none; /* Nasconde la barra di scorrimento in IE e Edge */
+    scrollbar-width: none;
+  }
+  
+  /* per l'ombra alle estremità con js */
+  .scrollableX-container-center::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+    opacity: 0;
+  }
+  
+  .scrollableX-container-center::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+    opacity: 1;
+  }
+  
+  .scrollableX-container-center.start::before {
+    opacity: 1;
+  }
+  .scrollableX-container-center.start::after {
+    opacity: 0;
+  }
+  
+  /* ------------------------------------------------------------------------------------------------------------ */
+  
+  .card-center-content {
+    padding: 12px;
+    border-radius: 10px;
+  }
+  .card-center-content:hover {
+    background-color: #212529;
+  }
+  
+  .card-center-content > div {
+    background-color: transparent;
+  }
+  
+  .card-center-content > div img {
+    object-fit: cover;
+    width: 154px;
+    height: 154px;
+  }
+  
+  .card-center-content > div div {
+    padding: 2px;
+    padding-top: 10px;
+  }
+  
+  /*  ------------------------------------------------------------------------------------------------------------------------------------  */
+  /*   play bar  */
+  
+  .musicContainer {
+    background-color: #f8f9fa; /* Colore di sfondo chiaro */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .musicImg img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+  }
+  
+  .musicText h6 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  
+  .musicText p {
+    font-size: 12px;
+    color: #6c757d;
+  }
+  
+  .musicButtons button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 50%;
+  }
+  
+  .progress-container {
+    width: 100%;
+  }
+  
+  .form-range {
+    width: 100%;
+  }
+  
+  #musicRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 15px;
+    background: rgb(0, 255, 0); /* Colore del pollice */
+    /* Rende il pollice circolare */
+  }
+  
+  #volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 15px;
+    background: rgb(0, 255, 0);
+  }
+  /* Personalizzazione della barra di scorrimento */
+  #musicRange {
+    width: 100%;
+    height: 8px; /* Altezza della barra */
+    background: #ddd; /* Colore di sfondo della barra */
+    border-radius: 5px; /* Rende la barra arrotondata */
+    outline: none; /* Rimuove il bordo quando viene cliccato */
+  }
+  
+  #volume {
+    width: 50%;
+  }
+  
+  .musicRight {
+    justify-content: center;
+  }
+  
+  .musicLeft {
+    justify-content: center;
+  }
+  
+  .navbar-collapse {
+    margin-top: 10px; /* Puoi aumentare o diminuire questo valore a seconda di quanto margine desideri */
+  }
+  
+  /* Card artist */
+  
+  .card-img-artist {
+    height: 40vh;
+  }
+  
+  #cardArtist {
+    border: none;
+  }
+  #cardArtist h1 {
+    font-size: 80px;
+    font-weight: 800;
+  }
+  #cardArtist h1,
+  p {
+    text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.65);
+  }
+  .artistButtons {
+    width: 30%;
+  }
+  .artistPlay {
+    color: #1fd760;
+    font-size: 55px;
+    margin-left: 1rem;
+  }
+  .followButtonA {
+    margin-top: 10.333%;
+  }
+  .followbutton {
+    margin-block: 33.333%;
+  }
+  .threeDots {
+    background-color: #121212;
+  }
+  #cardAlbum{
+    background-color: #121212;
+  }
+  
+  .spaceminutes {
+    width: 15%;
+  }
+  .bgspecial {
+    background-color:#1fd760;
+  }
+.paddingspecial{
+    padding-top:10px;
+}
+.widthspecial{
+   width:87%;
+}
+.pspacespecial{
+    padding-left:16%;
+    font-size:12px;
+}
+.titleAlbum{
+    letter-spacing: -2px;
+   font-size:300%;
+}
