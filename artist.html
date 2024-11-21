@@ -22,7 +22,7 @@
     <div class="mx-5">
       <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
       <!-- NAV BAR PRINCIPALE -->
-      <nav id="nav" class="navbar navbar-expand-lg bg-black pe-2">
+      <nav id="nav" class="navbar bg-black pe-2">
         <div class="container-fluid px-0">
           <button
             class="navbar-brand bg-black border border-black py-0 text-decoration-none"
@@ -31,45 +31,28 @@
               <i class="bi bi-spotify fs-1 text-white"></i>
             </a>
           </button>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <!-- Aggiungi le classi responsive per gestire la disposizione in colonna su dispositivi small -->
-            <div
-              class="d-flex flex-column flex-lg-row w-100 justify-content-between align-items-start align-items-lg-center"
-            >
-              <!-- Pulsante Home -->
-              <form class="d-flex">
-                <button class="btn me-2 bg-dark rounded-circle" type="submit">
-                  <i
-                    class="bi bi-house-door mouseHover fs-5 text-secondary"
-                  ></i>
-                </button>
-              </form>
-              <!-- Sezione di ricerca (input) -->
-              <div
-                class="d-flex flex-grow-1 justify-content-center w-100 w-lg-auto"
-              >
+          <form class="d-flex" role="search">
+            <button class="btn me-2 bg-dark rounded-circle" type="submit">
+              <i class="bi bi-house-door mouseHover fs-5 text-secondary"></i>
+            </button>
+
+            <div class="align-content-center" style="max-width: 400px">
+              <a href="./search.html" class="text-decoration-none">
                 <button
                   type="button"
                   aria-label="Search"
-                  class="DocSearch DocSearch-Button d-flex align-items-center justify-content-between p-2 px-3 bg-dark rounded-pill btn w-100 w-lg-auto"
+                  class="DocSearch DocSearch-Button d-flex align-items-center justify-content-between p-2 px-3 bg-dark rounded-pill btn"
+                  style="width: 400px"
                 >
-                  <div class="DocSearch-Button-Container">
-                    <i class="bi bi-search mouseHover text-secondary"></i>
-                    <span
-                      class="DocSearch-Button-Placeholder ps-2 mouseHover text-secondary"
-                      >What do you want to play?</span
-                    >
+                  <div>
+                    <div class="DocSearch-Button-Container d-flex">
+                      <i class="bi bi-search mouseHover text-secondary"></i>
+                      <input
+                        type="text"
+                        placeholder="Cosa cerchi?"
+                        class="DocSearch-Button-Placeholder ps-2 mouseHover text-secondary border-0 bg-transparent w-100"
+                      />
+                    </div>
                   </div>
                   <div
                     class="DocSearch-Button-Keys ps-3 mouseHover border-start border-gray"
@@ -92,27 +75,43 @@
                     </svg>
                   </div>
                 </button>
-              </div>
-              <!-- Pulsanti Iscriviti e Accedi -->
-              <form class="d-flex">
-                <button class="btn me-2" type="button">
-                  <a
-                    href="./iscriviti.html"
-                    class="text-white text-decoration-none"
-                    >Iscriviti</a
-                  >
-                </button>
-                <button
-                  class="btn py-2 px-4 bg-white text-black rounded-pill"
-                  type="button"
-                >
-                  <a href="./login.html" class="text-black text-decoration-none"
-                    >Accedi</a
-                  >
-                </button>
-              </form>
+              </a>
             </div>
-          </div>
+          </form>
+
+          <form class="d-flex">
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-secondary dropdown-toggle bg-success border-0"
+                data-bs-toggle="dropdown"
+                data-bs-display="static"
+                aria-expanded="false"
+              >
+                <i class="bi bi-person-fill text-black"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <button class="btn me-2" type="button">
+                    <a
+                      href="./iscriviti.html"
+                      class="text-white text-decoration-none"
+                      >Iscriviti</a
+                    >
+                  </button>
+                </li>
+                <li>
+                  <button class="btn me-2" type="button">
+                    <a
+                      href="./login.html"
+                      class="text-white text-decoration-none"
+                      >Accedi</a
+                    >
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </form>
         </div>
       </nav>
 
