@@ -130,6 +130,26 @@ body {
   background-color: #212529;
 }
 
+.card-aside #play-icon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-inline: 17px;
+  padding-block: 10px;
+  border-radius: 3px;
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card-aside:hover #play-icon {
+  opacity: 1;
+  transform: scale(1);
+  background-color: #2125293a;
+}
+
 /* ------------------------------------------------------------------------------------------------------------ */
 /* CONTENUTO CENTRALE SEARCH */
 .container-search {
@@ -151,13 +171,14 @@ body {
 .div-interno-col {
   overflow: hidden;
   position: relative;
-  height: 200px;
+  aspect-ratio: 16 / 10;
   width: 100%;
 }
 
 .div-interno-col div {
-  width: 150px;
-  height: 150px;
+  width: 45%; /*  proporzione per 1,6 per mantere l'immagine quadrata, */
+  height: 72%; /* altrimenti avrebbe preso le proporzioni 16/10 da sopra quindi sarebbe stata rettangolare */
+
   transform: rotate(20deg);
   transform-origin: center; /* Mantieni la rotazione centrata */
   position: relative;

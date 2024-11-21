@@ -96,13 +96,17 @@ body {
 /* per l'ombra alle estremità con js */
 .scrollable-container::before {
   left: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  background: linear-gradient(
+    to right,
+    rgba(12, 12, 12, 0.7),
+    rgba(0, 0, 0, 0)
+  );
   opacity: 0;
 }
 
 .scrollable-container::after {
   right: 0;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  background: linear-gradient(to left, rgba(12, 12, 12, 0.7), rgba(0, 0, 0, 0));
   opacity: 1;
 }
 
@@ -183,6 +187,46 @@ body {
 .img-orizontal-card-central {
   width: 52px;
   height: 52px;
+}
+
+.card-aside #play-icon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-inline: 17px;
+  padding-block: 10px;
+  border-radius: 3px;
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card-aside:hover #play-icon {
+  opacity: 1;
+  transform: scale(1);
+  background-color: #2125293a;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+/* Cards CENTRALI ORuZZONTALI */
+.row-center-orizontal-cards .card .play-icon {
+  position: absolute;
+  bottom: 1px;
+
+  right: 5px;
+  font-size: 30px;
+  color: rgb(0, 255, 0);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.row-center-orizontal-cards .card:hover .play-icon {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* ------------------------------------------------------------------------------------------------------------ */
