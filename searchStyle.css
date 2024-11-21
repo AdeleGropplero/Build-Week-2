@@ -149,7 +149,6 @@ body {
 }
 
 .div-interno-col {
-  border: #6c757d 2px solid;
   overflow: hidden;
   position: relative;
   height: 200px;
@@ -166,6 +165,8 @@ body {
   overflow: hidden;
   top: 50px;
   left: 20px;
+  border-radius: 8px;
+  box-shadow: 3px 4px 20px #121212;
 }
 
 .div-interno-col div img {
