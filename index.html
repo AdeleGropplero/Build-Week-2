@@ -12,11 +12,8 @@
     />
     <link rel="stylesheet" href="./asset 3/css/circular-font.css" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="./asset 3/css/style.css" />
   </head>
   <body data-bs-theme="dark" class="bg-black">
     <div class="mx-5">
@@ -24,9 +21,7 @@
       <!-- NAV BAR PRINCIPALE -->
       <nav id="nav" class="navbar bg-black pe-2">
         <div class="container-fluid px-0">
-          <button
-            class="navbar-brand bg-black border border-black py-0 text-decoration-none"
-          >
+          <button class="navbar-brand bg-black border border-black py-0 text-decoration-none">
             <a href="./index.html">
               <i class="bi bi-spotify fs-1 text-white"></i>
             </a>
@@ -36,60 +31,61 @@
               <i class="bi bi-house-door mouseHover fs-5 text-secondary"></i>
             </button>
 
-            <div class="align-content-center" style="width: 400px">
-              <button
-                type="button"
-                aria-label="Search"
-                class="DocSearch DocSearch-Button d-flex align-items-center justify-content-between p-2 px-3 bg-dark rounded-pill btn"
-                style="width: 400px"
-              >
-                <div>
-                  <div class="DocSearch-Button-Container">
-                    <i class="bi bi-search mouseHover text-secondary"></i>
-                    <span
-                      class="DocSearch-Button-Placeholder ps-2 mouseHover text-secondary"
-                      >What do you want to play?</span
-                    >
-                  </div>
-                </div>
-                <div
-                  class="DocSearch-Button-Keys ps-3 mouseHover border-start border-gray"
+            <div class="align-content-center">
+              <a href="./search.html" class="text-decoration-none">
+                <button
+                  type="button"
+                  aria-label="Search"
+                  class="DocSearch DocSearch-Button d-flex align-items-center justify-content-between p-2 px-3 bg-dark rounded-pill btn"
+                  style="width: 400px"
                 >
-                  <svg
-                    width="24px"
-                    data-encore-id="icon"
-                    role="img"
-                    aria-hidden="true"
-                    viewBox="0 0 24 24"
-                    class="Svg-sc-ytk21e-0 svg bneLcE"
-                    fill="gray"
-                  >
-                    <path
-                      d="M15 15.5c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z"
-                    ></path>
-                    <path
-                      d="M1.513 9.37A1 1 0 0 1 2.291 9h19.418a1 1 0 0 1 .979 1.208l-2.339 11a1 1 0 0 1-.978.792H4.63a1 1 0 0 1-.978-.792l-2.339-11a1 1 0 0 1 .201-.837zM3.525 11l1.913 9h13.123l1.913-9H3.525zM4 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4h-2V3H6v3H4V2z"
-                    ></path>
-                  </svg>
-                </div>
-              </button>
+                  <div>
+                    <div class="DocSearch-Button-Container d-flex">
+                      <i class="bi bi-search mouseHover text-secondary"></i>
+                      <input
+                        type="text"
+                        placeholder="Cosa cerchi?"
+                        class="DocSearch-Button-Placeholder ps-2 mouseHover text-secondary border-0 bg-transparent w-100"
+                      />
+                    </div>
+                  </div>
+                  <div class="DocSearch-Button-Keys ps-3 mouseHover border-start border-gray">
+                    <svg width="24px" data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24" class="Svg-sc-ytk21e-0 svg bneLcE" fill="gray">
+                      <path d="M15 15.5c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z"></path>
+                      <path
+                        d="M1.513 9.37A1 1 0 0 1 2.291 9h19.418a1 1 0 0 1 .979 1.208l-2.339 11a1 1 0 0 1-.978.792H4.63a1 1 0 0 1-.978-.792l-2.339-11a1 1 0 0 1 .201-.837zM3.525 11l1.913 9h13.123l1.913-9H3.525zM4 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4h-2V3H6v3H4V2z"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
+              </a>
             </div>
           </form>
 
           <form class="d-flex">
-            <button class="btn me-2" type="button">
-              <a href="./iscriviti.html" class="text-white text-decoration-none"
-                >Iscriviti</a
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-secondary dropdown-toggle bg-success border-0"
+                data-bs-toggle="dropdown"
+                data-bs-display="static"
+                aria-expanded="false"
               >
-            </button>
-            <button
-              class="btn py-2 px-4 bg-white text-black rounded-pill"
-              type="button"
-            >
-              <a href="./login.html" class="text-black text-decoration-none"
-                >Accedi</a
-              >
-            </button>
+                <i class="bi bi-person-fill text-black"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <button class="btn me-2" type="button">
+                    <a href="./iscriviti.html" class="text-white text-decoration-none">Iscriviti</a>
+                  </button>
+                </li>
+                <li>
+                  <button class="btn me-2" type="button">
+                    <a href="./login.html" class="text-white text-decoration-none">Accedi</a>
+                  </button>
+                </li>
+              </ul>
+            </div>
           </form>
         </div>
       </nav>
@@ -103,10 +99,7 @@
             <div id="asideContent" class="px-2 rounded">
               <!-- library -->
               <div id="aside-fixed">
-                <div
-                  id="library"
-                  class="d-flex align-items-center justify-content-between px-2"
-                >
+                <div id="library" class="d-flex align-items-center justify-content-between px-2">
                   <button
                     class="btn encore-text-body-medium-bold d-flex align-items-center px-0"
                     aria-label="Comprimi La tua libreria"
@@ -114,7 +107,7 @@
                   >
                     <div>
                       <svg
-                        width="28px"
+                        width="24px"
                         data-encore-id="icon"
                         role="img"
                         aria-hidden="true"
@@ -127,13 +120,11 @@
                         ></path>
                       </svg>
                     </div>
-                    <div class="text-secondary mouseHover fs-5">
-                      Your Library
-                    </div>
+                    <div class="text-secondary mouseHover fs-6">Your Library</div>
                   </button>
 
                   <button class="btn">
-                    <i class="bi bi-plus-lg mouseHover text-secondary fs-5"></i>
+                    <i class="bi bi-plus-lg mouseHover text-secondary fs-6"></i>
                   </button>
                 </div>
 
@@ -142,26 +133,12 @@
                   <div class="mt-3 scrollable-container">
                     <div class="d-flex gap-2 content">
                       <!-- Bottoni allineati orizzontalmente con spazio tra di loro -->
+                      <button class="btn rounded-pill bg-dark px-3 py-1">Playlists</button>
                       <button class="btn rounded-pill bg-dark px-3 py-1">
-                        Playlists
+                        <a href="./artist.html" class="text-white text-decoration-none"> Artists</a>
                       </button>
-                      <button class="btn rounded-pill bg-dark px-3 py-1">
-                        <a
-                          href="./artist.html"
-                          class="text-white text-decoration-none"
-                        >
-                          Artists</a
-                        >
-                      </button>
-                      <button class="btn rounded-pill bg-dark px-3 py-1">
-                        Albums
-                      </button>
-                      <button
-                        class="btn rounded-pill bg-dark px-3 py-1 flex-grow-1"
-                        style="white-space: nowrap"
-                      >
-                        Podcast & Shows
-                      </button>
+                      <button class="btn rounded-pill bg-dark px-3 py-1">Albums</button>
+                      <button class="btn rounded-pill bg-dark px-3 py-1 flex-grow-1" style="white-space: nowrap">Podcast & Shows</button>
                     </div>
                   </div>
                 </div>
@@ -169,23 +146,12 @@
 
               <!--DIV SEARCH + DROPDWN -->
               <div id="scrolling-aside">
-                <div
-                  id="containerSearchAside"
-                  class="d-flex justify-content-between mt-3 align-items-center px-2"
-                >
+                <div id="containerSearchAside" class="d-flex justify-content-between mt-3 align-items-center px-2">
                   <div class="d-flex align-items-center" id="search-container">
                     <button id="search-btn-aside" class="btn px-0">
-                      <i
-                        class="bi bi-search text-secondary mouseHover fs-5"
-                      ></i>
+                      <i class="bi bi-search text-secondary mouseHover fs-6"></i>
                     </button>
-                    <input
-                      type="text"
-                      id="search-bar"
-                      class="search-bar search-btn-aside"
-                      placeholder="Cerca..."
-                      aria-hidden="true"
-                    />
+                    <input type="text" id="search-bar" class="search-bar search-btn-aside" placeholder="Cerca..." aria-hidden="true" />
                   </div>
 
                   <div class="dropdown">
@@ -199,17 +165,10 @@
                       aria-expanded="false"
                     >
                       <div id="recentiScoparsa">
-                        <span
-                          class="me-2 mouseHover fs-5"
-                          data-encore-id="text"
-                          data-sortbox-label="true"
-                          >Recenti
-                        </span>
+                        <span class="me-2 mouseHover fs-6" data-encore-id="text" data-sortbox-label="true">Recenti </span>
                       </div>
                       <div>
-                        <i
-                          class="bi bi-list-ul fs-3 text-secondary mouseHover"
-                        ></i>
+                        <i class="bi bi-list-ul fs-4 text-secondary mouseHover"></i>
                       </div>
                     </button>
                     <ul class="dropdown-menu">
@@ -220,9 +179,7 @@
                         <a class="dropdown-item" href="#">Another action</a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="#"
-                          >Something else here</a
-                        >
+                        <a class="dropdown-item" href="#">Something else here</a>
                       </li>
                       <li><hr class="dropdown-divider" /></li>
                       <li>
@@ -239,11 +196,7 @@
                   <div class="card card-aside">
                     <div class="d-flex">
                       <div class="p-2">
-                        <img
-                          src="./asset 3/imgs/main/image-1.jpg"
-                          class="img-fluid rounded img-aside"
-                          alt="..."
-                        />
+                        <img src="./asset 3/imgs/main/image-1.jpg" class="img-fluid rounded img-aside" alt="..." />
                       </div>
                       <div class="">
                         <div class="card-body px-0 py-2 overflow-hidden">
@@ -257,11 +210,7 @@
                   <div class="card card-aside">
                     <div class="d-flex">
                       <div class="p-2">
-                        <img
-                          src="./asset 3/imgs/main/image-1.jpg"
-                          class="img-fluid rounded img-aside"
-                          alt="..."
-                        />
+                        <img src="./asset 3/imgs/main/image-1.jpg" class="img-fluid rounded img-aside" alt="..." />
                       </div>
                       <div class="">
                         <div class="card-body px-0 py-2 overflow-hidden">
@@ -275,11 +224,7 @@
                   <div class="card card-aside">
                     <div class="d-flex">
                       <div class="p-2">
-                        <img
-                          src="./asset 3/imgs/main/image-1.jpg"
-                          class="img-fluid rounded img-aside"
-                          alt="..."
-                        />
+                        <img src="./asset 3/imgs/main/image-1.jpg" class="img-fluid rounded img-aside" alt="..." />
                       </div>
                       <div class="">
                         <div class="card-body px-0 py-2 overflow-hidden">
@@ -293,11 +238,7 @@
                   <div class="card card-aside">
                     <div class="d-flex">
                       <div class="p-2">
-                        <img
-                          src="./asset 3/imgs/main/image-1.jpg"
-                          class="img-fluid rounded img-aside"
-                          alt="..."
-                        />
+                        <img src="./asset 3/imgs/main/image-1.jpg" class="img-fluid rounded img-aside" alt="..." />
                       </div>
                       <div class="">
                         <div class="card-body px-0 py-2 overflow-hidden">
@@ -311,11 +252,7 @@
                   <div class="card card-aside">
                     <div class="d-flex">
                       <div class="p-2">
-                        <img
-                          src="./asset 3/imgs/main/image-1.jpg"
-                          class="img-fluid rounded img-aside"
-                          alt="..."
-                        />
+                        <img src="./asset 3/imgs/main/image-1.jpg" class="img-fluid rounded img-aside" alt="..." />
                       </div>
                       <div class="">
                         <div class="card-body px-0 py-2 overflow-hidden">
@@ -329,11 +266,7 @@
                   <div class="card card-aside">
                     <div class="d-flex">
                       <div class="p-2">
-                        <img
-                          src="./asset 3/imgs/main/image-1.jpg"
-                          class="img-fluid rounded img-aside"
-                          alt="..."
-                        />
+                        <img src="./asset 3/imgs/main/image-1.jpg" class="img-fluid rounded img-aside" alt="..." />
                       </div>
                       <div class="">
                         <div class="card-body px-0 py-2 overflow-hidden">
@@ -347,11 +280,7 @@
                   <div class="card card-aside">
                     <div class="d-flex">
                       <div class="p-2">
-                        <img
-                          src="./asset 3/imgs/main/image-1.jpg"
-                          class="img-fluid rounded img-aside"
-                          alt="..."
-                        />
+                        <img src="./asset 3/imgs/main/image-1.jpg" class="img-fluid rounded img-aside" alt="..." />
                       </div>
                       <div class="">
                         <div class="card-body px-0 py-2 overflow-hidden">
@@ -365,11 +294,7 @@
                   <div class="card card-aside">
                     <div class="d-flex">
                       <div class="p-2">
-                        <img
-                          src="./asset 3/imgs/main/image-1.jpg"
-                          class="img-fluid rounded img-aside"
-                          alt="..."
-                        />
+                        <img src="./asset 3/imgs/main/image-1.jpg" class="img-fluid rounded img-aside" alt="..." />
                       </div>
                       <div class="">
                         <div class="card-body px-0 py-2 overflow-hidden">
@@ -383,11 +308,7 @@
                   <div class="card card-aside">
                     <div class="d-flex">
                       <div class="p-2">
-                        <img
-                          src="./asset 3/imgs/main/image-1.jpg"
-                          class="img-fluid rounded img-aside"
-                          alt="..."
-                        />
+                        <img src="./asset 3/imgs/main/image-1.jpg" class="img-fluid rounded img-aside" alt="..." />
                       </div>
                       <div class="">
                         <div class="card-body px-0 py-2 overflow-hidden">
@@ -401,11 +322,7 @@
                   <div class="card card-aside">
                     <div class="d-flex">
                       <div class="p-2">
-                        <img
-                          src="./asset 3/imgs/main/image-1.jpg"
-                          class="img-fluid rounded img-aside"
-                          alt="..."
-                        />
+                        <img src="./asset 3/imgs/main/image-1.jpg" class="img-fluid rounded img-aside" alt="..." />
                       </div>
                       <div class="">
                         <div class="card-body px-0 py-2 overflow-hidden">
@@ -419,11 +336,7 @@
                   <div class="card card-aside">
                     <div class="d-flex">
                       <div class="p-2">
-                        <img
-                          src="./asset 3/imgs/main/image-1.jpg"
-                          class="img-fluid rounded img-aside"
-                          alt="..."
-                        />
+                        <img src="./asset 3/imgs/main/image-1.jpg" class="img-fluid rounded img-aside" alt="..." />
                       </div>
                       <div class="">
                         <div class="card-body px-0 py-2 overflow-hidden">
@@ -437,11 +350,7 @@
                   <div class="card card-aside">
                     <div class="d-flex">
                       <div class="p-2">
-                        <img
-                          src="./asset 3/imgs/main/image-1.jpg"
-                          class="img-fluid rounded img-aside"
-                          alt="..."
-                        />
+                        <img src="./asset 3/imgs/main/image-1.jpg" class="img-fluid rounded img-aside" alt="..." />
                       </div>
                       <div class="">
                         <div class="card-body px-0 py-2 overflow-hidden">
@@ -455,11 +364,7 @@
                   <div class="card card-aside">
                     <div class="d-flex">
                       <div class="p-2">
-                        <img
-                          src="./asset 3/imgs/main/image-1.jpg"
-                          class="img-fluid rounded img-aside"
-                          alt="..."
-                        />
+                        <img src="./asset 3/imgs/main/image-1.jpg" class="img-fluid rounded img-aside" alt="..." />
                       </div>
                       <div class="">
                         <div class="card-body px-0 py-2 overflow-hidden">
@@ -473,11 +378,7 @@
                   <div class="card card-aside">
                     <div class="d-flex">
                       <div class="p-2">
-                        <img
-                          src="./asset 3/imgs/main/image-1.jpg"
-                          class="img-fluid rounded img-aside"
-                          alt="..."
-                        />
+                        <img src="./asset 3/imgs/main/image-1.jpg" class="img-fluid rounded img-aside" alt="..." />
                       </div>
                       <div class="">
                         <div class="card-body px-0 py-2 overflow-hidden">
@@ -491,11 +392,7 @@
                   <div class="card card-aside">
                     <div class="d-flex">
                       <div class="p-2">
-                        <img
-                          src="./asset 3/imgs/main/image-1.jpg"
-                          class="img-fluid rounded img-aside"
-                          alt="..."
-                        />
+                        <img src="./asset 3/imgs/main/image-1.jpg" class="img-fluid rounded img-aside" alt="..." />
                       </div>
                       <div class="">
                         <div class="card-body px-0 py-2 overflow-hidden">
@@ -518,185 +415,15 @@
           <div class="col-9">
             <div id="centralContent" class="px-4 rounded">
               <div id="buttonCenter" class="button pb-4">
-                <button class="btn rounded-pill bg-dark px-3 py-1">
-                  Tutto
-                </button>
-                <button class="btn rounded-pill bg-dark px-3 py-1">
-                  Musica
-                </button>
-                <button class="btn rounded-pill bg-dark px-3 py-1">
-                  Podcast
-                </button>
+                <button class="btn rounded-pill bg-dark px-3 py-1">Tutto</button>
+                <button class="btn rounded-pill bg-dark px-3 py-1">Musica</button>
+                <button class="btn rounded-pill bg-dark px-3 py-1">Podcast</button>
               </div>
 
               <div class="container mt-2">
                 <div class="row gap-0 row-center-orizontal-cards">
-                  <!-- Card 1 -->
+                  <!-- Card generate qui -->
 
-                  <div
-                    class="col-6 col-md-6 col-lg-4 col-xl-3 px-0 cols-center-orizontal-cards"
-                  >
-                    <div class="card orizontal-card-central">
-                      <div class="d-flex">
-                        <div class="img-orizontal-card-central">
-                          <img
-                            src="./asset 3/imgs/main/image-1.jpg"
-                            class="img-fluid rounded img-aside"
-                            alt="..."
-                          />
-                        </div>
-                        <div class="">
-                          <div class="card-body py-1 ps-2">
-                            <h5 class="card-title fs-6">Card title</h5>
-                            <p class="card-text testi7">Categoria - Artisti</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Card 2 -->
-                  <div class="col-6 col-md-6 col-lg-4 col-xl-3 px-0">
-                    <div class="card orizontal-card-central">
-                      <div class="d-flex">
-                        <div class="img-orizontal-card-central">
-                          <img
-                            src="./asset 3/imgs/main/image-1.jpg"
-                            class="img-fluid rounded img-aside"
-                            alt="..."
-                          />
-                        </div>
-                        <div class="">
-                          <div class="card-body py-1 ps-2">
-                            <h5 class="card-title fs-6">Card title</h5>
-                            <p class="card-text testi7">Categoria - Artisti</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Card 3 -->
-                  <div class="col-6 col-md-6 col-lg-4 col-xl-3 px-0">
-                    <div class="card orizontal-card-central">
-                      <div class="d-flex">
-                        <div class="img-orizontal-card-central">
-                          <img
-                            src="./asset 3/imgs/main/image-1.jpg"
-                            class="img-fluid rounded img-aside"
-                            alt="..."
-                          />
-                        </div>
-                        <div class="">
-                          <div class="card-body py-1 ps-2">
-                            <h5 class="card-title fs-6">Card title</h5>
-                            <p class="card-text testi7">Categoria - Artisti</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Card 4 -->
-                  <div class="col-6 col-md-6 col-lg-4 col-xl-3 px-0">
-                    <div class="card orizontal-card-central">
-                      <div class="d-flex">
-                        <div class="img-orizontal-card-central">
-                          <img
-                            src="./asset 3/imgs/main/image-1.jpg"
-                            class="img-fluid rounded img-aside"
-                            alt="..."
-                          />
-                        </div>
-                        <div class="">
-                          <div class="card-body py-1 ps-2">
-                            <h5 class="card-title fs-6">Card title</h5>
-                            <p class="card-text testi7">Categoria - Artisti</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Card 5 -->
-                  <div class="col-6 col-md-6 col-lg-4 col-xl-3 px-0">
-                    <div class="card orizontal-card-central">
-                      <div class="d-flex">
-                        <div class="img-orizontal-card-central">
-                          <img
-                            src="./asset 3/imgs/main/image-1.jpg"
-                            class="img-fluid rounded img-aside"
-                            alt="..."
-                          />
-                        </div>
-                        <div class="">
-                          <div class="card-body py-1 ps-2">
-                            <h5 class="card-title fs-6">Card title</h5>
-                            <p class="card-text testi7">Categoria - Artisti</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Card 6-->
-                  <div class="col-6 col-md-6 col-lg-4 col-xl-3 px-0">
-                    <div class="card orizontal-card-central">
-                      <div class="d-flex">
-                        <div class="img-orizontal-card-central">
-                          <img
-                            src="./asset 3/imgs/main/image-1.jpg"
-                            class="img-fluid rounded img-aside"
-                            alt="..."
-                          />
-                        </div>
-                        <div class="">
-                          <div class="card-body py-1 ps-2">
-                            <h5 class="card-title fs-6">Card title</h5>
-                            <p class="card-text testi7">Categoria - Artisti</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Card 7-->
-                  <div class="col-6 col-md-6 col-lg-4 col-xl-3 px-0">
-                    <div class="card orizontal-card-central">
-                      <div class="d-flex">
-                        <div class="img-orizontal-card-central">
-                          <img
-                            src="./asset 3/imgs/main/image-1.jpg"
-                            class="img-fluid rounded img-aside"
-                            alt="..."
-                          />
-                        </div>
-                        <div class="">
-                          <div class="card-body py-1 ps-2">
-                            <h5 class="card-title fs-6">Card title</h5>
-                            <p class="card-text testi7">Categoria - Artisti</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Card 8 -->
-                  <div class="col-6 col-md-6 col-lg-4 col-xl-3 px-0">
-                    <div class="card orizontal-card-central">
-                      <div class="d-flex">
-                        <div class="img-orizontal-card-central">
-                          <img
-                            src="./asset 3/imgs/main/image-1.jpg"
-                            class="img-fluid rounded img-aside"
-                            alt="..."
-                          />
-                        </div>
-                        <div class="">
-                          <div class="card-body py-1 ps-2">
-                            <h5 class="card-title fs-6">Card title</h5>
-                            <p class="card-text testi7">Categoria - Artisti</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                   <!-- fine card orizzontali in testa -->
                 </div>
               </div>
@@ -704,10 +431,8 @@
               <!-- inizio cards scrollabili su x -->
 
               <div class="box-cards-central">
-                <div
-                  class="textHeading d-flex justify-content-between align-items-center mt-3"
-                >
-                  <h2 class="">Creato per te</h2>
+                <div class="textHeading d-flex justify-content-between align-items-center mt-3">
+                  <h2 class="">Canzoni in tendenza</h2>
                   <span class="">Mostra tutto</span>
                 </div>
 
@@ -721,10 +446,8 @@
               <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
               <!-- sample di partenza -->
               <div class="box-cards-central">
-                <div
-                  class="textHeading d-flex justify-content-between align-items-center mt-3"
-                >
-                  <h2 class="">Creato per te</h2>
+                <div class="textHeading d-flex justify-content-between align-items-center mt-3">
+                  <h2 class="">Ascoltate di recente</h2>
                   <span class="">Mostra tutto</span>
                 </div>
 
@@ -737,368 +460,18 @@
 
               <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
               <div class="box-cards-central">
-                <div
-                  class="textHeading d-flex justify-content-between align-items-center mt-3"
-                >
-                  <h2 class="">Creato per te</h2>
+                <div class="textHeading d-flex justify-content-between align-items-center mt-3">
+                  <h2 class="">Playlist dal Mondo</h2>
                   <span class="">Mostra tutto</span>
                 </div>
 
                 <div class="scrollableX-container-center">
-                  <div class="d-flex content-center">
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="d-flex content-center generi">
+                    <!-- Qui si generano dinamicamente le card -->
                   </div>
                 </div>
               </div>
 
-              <div class="box-cards-central">
-                <div
-                  class="textHeading d-flex justify-content-between align-items-center mt-3"
-                >
-                  <h2 class="">Creato per te</h2>
-                  <span class="">Mostra tutto</span>
-                </div>
-
-                <div class="scrollableX-container-center">
-                  <div class="d-flex content-center">
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="box-cards-central">
-                <div
-                  class="textHeading d-flex justify-content-between align-items-center mt-3"
-                >
-                  <h2 class="">Creato per te</h2>
-                  <span class="">Mostra tutto</span>
-                </div>
-
-                <div class="scrollableX-container-center">
-                  <div class="d-flex content-center">
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="box-cards-central">
-                <div
-                  class="textHeading d-flex justify-content-between align-items-center mt-3"
-                >
-                  <h2 class="">Creato per te</h2>
-                  <span class="">Mostra tutto</span>
-                </div>
-
-                <div class="scrollableX-container-center">
-                  <div class="d-flex content-center">
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-center-content">
-                      <div class="card border-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          class="card-img-top rounded-4"
-                          alt="..."
-                        />
-                        <div class="card-body">
-                          <p class="card-title">Card title</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
               <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
               <!-- footer -->
               <div class="container">
@@ -1108,19 +481,13 @@
                       <h5>Azienda</h5>
                       <ul class="nav flex-column">
                         <li class="nav-item mb-2">
-                          <a href="#" class="nav-link p-0 text-body-secondary"
-                            >Chi siamo?</a
-                          >
+                          <a href="#" class="nav-link p-0 text-body-secondary">Chi siamo?</a>
                         </li>
                         <li class="nav-item mb-2">
-                          <a href="#" class="nav-link p-0 text-body-secondary"
-                            >Opportunità di lavoro</a
-                          >
+                          <a href="#" class="nav-link p-0 text-body-secondary">Opportunità di lavoro</a>
                         </li>
                         <li class="nav-item mb-2">
-                          <a href="#" class="nav-link p-0 text-body-secondary"
-                            >For the Record</a
-                          >
+                          <a href="#" class="nav-link p-0 text-body-secondary">For the Record</a>
                         </li>
                       </ul>
                     </div>
@@ -1129,29 +496,19 @@
                       <h5>Community</h5>
                       <ul class="nav flex-column">
                         <li class="nav-item mb-2">
-                          <a href="#" class="nav-link p-0 text-body-secondary"
-                            >Per artisti</a
-                          >
+                          <a href="#" class="nav-link p-0 text-body-secondary">Per artisti</a>
                         </li>
                         <li class="nav-item mb-2">
-                          <a href="#" class="nav-link p-0 text-body-secondary"
-                            >Sviluppatori</a
-                          >
+                          <a href="#" class="nav-link p-0 text-body-secondary">Sviluppatori</a>
                         </li>
                         <li class="nav-item mb-2">
-                          <a href="#" class="nav-link p-0 text-body-secondary"
-                            >Pubblicità</a
-                          >
+                          <a href="#" class="nav-link p-0 text-body-secondary">Pubblicità</a>
                         </li>
                         <li class="nav-item mb-2">
-                          <a href="#" class="nav-link p-0 text-body-secondary"
-                            >Investitori</a
-                          >
+                          <a href="#" class="nav-link p-0 text-body-secondary">Investitori</a>
                         </li>
                         <li class="nav-item mb-2">
-                          <a href="#" class="nav-link p-0 text-body-secondary"
-                            >Venditori</a
-                          >
+                          <a href="#" class="nav-link p-0 text-body-secondary">Venditori</a>
                         </li>
                       </ul>
                     </div>
@@ -1160,19 +517,13 @@
                       <h5>Link utili</h5>
                       <ul class="nav flex-column">
                         <li class="nav-item mb-2">
-                          <a href="#" class="nav-link p-0 text-body-secondary"
-                            >Assistenza</a
-                          >
+                          <a href="#" class="nav-link p-0 text-body-secondary">Assistenza</a>
                         </li>
                         <li class="nav-item mb-2">
-                          <a href="#" class="nav-link p-0 text-body-secondary"
-                            >App per cellulare gratuita</a
-                          >
+                          <a href="#" class="nav-link p-0 text-body-secondary">App per cellulare gratuita</a>
                         </li>
                         <li class="nav-item mb-2">
-                          <a href="#" class="nav-link p-0 text-body-secondary"
-                            >Diritti del consumatore</a
-                          >
+                          <a href="#" class="nav-link p-0 text-body-secondary">Diritti del consumatore</a>
                         </li>
                       </ul>
                     </div>
@@ -1181,53 +532,35 @@
                       <h5>Piano Spotify</h5>
                       <ul class="nav flex-column">
                         <li class="nav-item mb-2">
-                          <a href="#" class="nav-link p-0 text-body-secondary"
-                            >Premium Individual</a
-                          >
+                          <a href="#" class="nav-link p-0 text-body-secondary">Premium Individual</a>
                         </li>
                         <li class="nav-item mb-2">
-                          <a href="#" class="nav-link p-0 text-body-secondary"
-                            >Premium Duo</a
-                          >
+                          <a href="#" class="nav-link p-0 text-body-secondary">Premium Duo</a>
                         </li>
                         <li class="nav-item mb-2">
-                          <a href="#" class="nav-link p-0 text-body-secondary"
-                            >Premium Family</a
-                          >
+                          <a href="#" class="nav-link p-0 text-body-secondary">Premium Family</a>
                         </li>
                         <li class="nav-item mb-2">
-                          <a href="#" class="nav-link p-0 text-body-secondary"
-                            >Premium Student</a
-                          >
+                          <a href="#" class="nav-link p-0 text-body-secondary">Premium Student</a>
                         </li>
                         <li class="nav-item mb-2">
-                          <a href="#" class="nav-link p-0 text-body-secondary"
-                            >Spotify Free</a
-                          >
+                          <a href="#" class="nav-link p-0 text-body-secondary">Spotify Free</a>
                         </li>
                       </ul>
                     </div>
                   </div>
 
-                  <div
-                    class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"
-                  >
+                  <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
                     <p>© 2024 Spotify AB</p>
                     <ul class="list-unstyled d-flex">
                       <li class="ms-3">
-                        <a class="link-body-emphasis" href="#"
-                          ><i class="bi bi-instagram"></i>
-                        </a>
+                        <a class="link-body-emphasis" href="#"><i class="bi bi-instagram"></i> </a>
                       </li>
                       <li class="ms-3">
-                        <a class="link-body-emphasis" href="#"
-                          ><i class="bi bi-twitter-x"></i>
-                        </a>
+                        <a class="link-body-emphasis" href="#"><i class="bi bi-twitter-x"></i> </a>
                       </li>
                       <li class="ms-3">
-                        <a class="link-body-emphasis" href="#"
-                          ><i class="bi bi-facebook"></i>
-                        </a>
+                        <a class="link-body-emphasis" href="#"><i class="bi bi-facebook"></i> </a>
                       </li>
                     </ul>
                   </div>
@@ -1243,13 +576,9 @@
     </div>
     <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
     <!-- play bar -->
-    <div
-      class="musicContainer d-flex flex-column flex-md-row align-items-center justify-content-between p-2 bg-black pb-3"
-    >
+    <div class="musicContainer d-flex flex-column flex-md-row align-items-center justify-content-between p-2 bg-black pb-3">
       <!-- Sinistra: Immagine e testo -->
-      <div
-        class="musicLeft d-flex align-items-center col-12 col-md-3 mb-2 mb-md-0"
-      >
+      <div class="musicLeft d-flex align-items-center col-12 col-md-3 mb-2 mb-md-0">
         <div class="musicImg rounded-3">
           <img
             src="https://images.unsplash.com/photo-1731877818770-820faabe2d4c?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -1264,9 +593,7 @@
       </div>
 
       <!-- Centro: Controlli musica -->
-      <div
-        class="musicControls d-flex flex-column align-items-center col-12 col-md-6 mb-2 mb-md-0"
-      >
+      <div class="musicControls d-flex flex-column align-items-center col-12 col-md-6 mb-2 mb-md-0">
         <div class="musicButtons d-flex align-items-center">
           <button class="btn me-2">
             <i class="bi bi-skip-start-fill fs-2"></i>
@@ -1280,14 +607,7 @@
         </div>
         <div class="d-inline-flex align-items-center w-100 mt-2">
           <div class="me-2">0:00</div>
-          <input
-            type="range"
-            class="form-range"
-            id="musicRange"
-            min="0"
-            max="100"
-            value="50"
-          />
+          <input type="range" class="form-range" id="musicRange" min="0" max="100" value="50" />
 
           <div class="ms-2">3:30</div>
         </div>
@@ -1296,20 +616,13 @@
       <!-- Destra: Controllo volume -->
       <div class="musicRight d-flex align-items-center col-12 col-md-3">
         <label for="volume" class="me-2">Volume</label>
-        <input
-          type="range"
-          class="form-range"
-          id="volume"
-          min="0"
-          max="100"
-          value="50"
-        />
+        <input type="range" class="form-range" id="volume" min="0" max="100" value="50" />
       </div>
     </div>
 
     <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
     <!-- SCRIPTS -->
-    <script src="./index.js"></script>
+    <script src="./asset 3/js/index.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
