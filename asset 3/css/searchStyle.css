@@ -247,10 +247,27 @@ body {
   /* Rende il pollice circolare */
 }
 
+/* Versione Mozilla*/
+#musicRange::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: rgb(0, 255, 0);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 #volume::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 15px;
   height: 15px;
+  background: rgb(0, 255, 0);
+}
+
+/* Versione Mozilla*/
+#volume::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
   background: rgb(0, 255, 0);
 }
 /* Personalizzazione della barra di scorrimento */

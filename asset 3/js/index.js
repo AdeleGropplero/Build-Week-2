@@ -69,6 +69,18 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* ------------------------------------------------------------------------------------------------------------ */
+/* playbar */
+
+/* const slider = document.getElementById("musicRange");
+
+slider.addEventListener("input", function () {
+  const value = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+  // Crea un gradiente che va dal bianco a sinistra (fino al valore) e grigio a destra
+  if (slider.value <= slider.max) {
+    slider.style.background = `linear-gradient(to right, rgb(255, 255, 255) ${value}%, #ddd ${value}%)`;
+  }
+}); */
+/* ------------------------------------------------------------------------------------------------------------ */
 /* Pare con API */
 /* ---------------------------------------------------------------------------------  */
 /* QUI STIAMO PRENDENDO LE CANZONI E GLI ALBUM PER LA PARTE CENTRALE ------------------------------------------------ */
