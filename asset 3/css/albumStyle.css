@@ -177,7 +177,7 @@ body {
   }
   
   .orizontal-card-central:hover {
-    background-color: rgba(255, 255, 255, 0.16);
+    background-color: rgba(255, 255, 255, 0.041);
   }
   
   .img-orizontal-card-central {
@@ -373,9 +373,8 @@ body {
   .followbutton {
     margin-block: 33.333%;
   }
-  .threeDots {
-    background-color: #121212;
-  }
+
+  
   #cardAlbum{
     background-color: #121212;
   }
@@ -399,4 +398,11 @@ body {
 .titleAlbum{
     letter-spacing: -2px;
    font-size:300%;
+}
+#centralContent{
+    background: rgb(36,36,36);
+    background: linear-gradient(0deg, rgba(36,36,36,1) 50%, rgba(54,64,19,1) 100%);
+}
+#cardAlbum{
+    background-color: transparent;
 }
