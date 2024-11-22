@@ -388,10 +388,10 @@ const getGeneri = function () {
     .catch((err) => console.log(err));
 };
 
-/* Creare getPlaylist, ricorda che ci vuole l'id, TROVARE SOLUZIONE O CAPIRE
+/*Creare getPlaylist, ricorda che ci vuole l'id, TROVARE SOLUZIONE O CAPIRE
 COME CAZZO FUNZIONA DEEZEER */
 
-/*window.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("DOMContentLoaded", function () {
   for (let i = 0; i < 8; i++) {
     getCards();
   }
@@ -411,4 +411,4 @@ COME CAZZO FUNZIONA DEEZEER */
   for (let i = 0; i < 12; i++) {
     getGeneri();
   }
-});*/
+});
