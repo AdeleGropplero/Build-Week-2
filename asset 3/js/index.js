@@ -447,6 +447,10 @@ const getAsideAlbums = function () {
         const cardAside = document.createElement("div");
         cardAside.className = "card card-aside";
 
+        cardAside.addEventListener("click", () => {
+          window.location.href = `/albums.html?id=${oggetto.id}`;
+        });
+
         const divCard = document.createElement("div");
         divCard.className = "d-flex divCard";
 
