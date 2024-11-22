@@ -131,7 +131,7 @@ const fetchArtistSongs = (artistName) => {
           class="px-3 py-1 d-flex align-content-center justify-content-between w-100 align-items-center align-self-center"
         >
           <div
-            class="px-0 py-2 overflow-hidden align-self-end"
+            class="px-0 py-2 overflow-hidden  "
           >
             <h5 class="card-title fs-6">${song.title}</h5>
           </div>
@@ -153,7 +153,7 @@ const fetchArtistSongs = (artistName) => {
               >
                 <p>${Math.floor(song.duration / 60)}:${
           song.duration % 60 < 10 ? "0" : ""
-        }${song.duration % 60} Min</p>
+        }${song.duration % 60} </p>
               </div>
               <button
                 class="bg-transparent border border-0"
@@ -167,6 +167,27 @@ const fetchArtistSongs = (artistName) => {
         </div>
       </div>
     </div>`;
+
+        li.onclick = function () {
+          // Controlla se esiste già un audio in riproduzione e lo interrompe
+          const existingAudio = document.querySelector("audio");
+          if (existingAudio) {
+            existingAudio.pause();
+            existingAudio.remove();
+          }
+
+          // Crea un nuovo elemento audio
+          const audio = document.createElement("audio");
+          audio.src = song.preview; // URL dell'anteprima audio
+          audio.controls = true; // Mostra i controlli audio
+          audio.autoplay = true; // Avvia la riproduzione automaticamente
+
+          /* audio.controls.style.display = "none"; */
+
+          // Aggiungi l'elemento audio al list-item o a un contenitore
+          li.appendChild(audio);
+        };
+
         songList.appendChild(li); // Aggiungi la card alla lista
       });
     })
