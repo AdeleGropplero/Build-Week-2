@@ -16,7 +16,9 @@ content.addEventListener("scroll", () => {
 /* caroselli centrali*/
 
 const contentCenter = document.querySelectorAll(".content-center");
-const scrollableXContainerCenter = document.querySelectorAll(".scrollableX-container-center");
+const scrollableXContainerCenter = document.querySelectorAll(
+  ".scrollableX-container-center"
+);
 contentCenter.forEach((singleContent) => {
   singleContent.addEventListener("scroll", () => {
     const scrollLeft = singleContent.scrollLeft;
@@ -99,7 +101,22 @@ const headerKeysMatteuccio = {
 };
 
 const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
-const params = ["eminem", "mannarino", "lazza", "radiohead", "883", "altj", "alter%20bridge", "salmo", "hozier", "mina", "muse", "pomme", "sia", "shiva"];
+const params = [
+  "eminem",
+  "mannarino",
+  "lazza",
+  "radiohead",
+  "883",
+  "altj",
+  "alter%20bridge",
+  "salmo",
+  "hozier",
+  "mina",
+  "muse",
+  "pomme",
+  "sia",
+  "shiva"
+];
 
 let availableParams = [...params];
 
@@ -122,7 +139,9 @@ const getCards = function () {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error(`Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`);
+        throw new Error(
+          `Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`
+        );
       }
     })
     .then((oggetto) => {
@@ -131,7 +150,8 @@ const getCards = function () {
 
       const row = document.querySelector(".row-center-orizontal-cards");
       const col = document.createElement("div");
-      col.className = "col-6 col-md-6 col-lg-4 col-xl-3 px-0 cols-center-orizontal-cards";
+      col.className =
+        "col-6 col-md-6 col-lg-4 col-xl-3 px-0 cols-center-orizontal-cards";
 
       const cardCenterOrizontal = document.createElement("div");
       cardCenterOrizontal.className = "card orizontal-card-central";
@@ -163,7 +183,8 @@ const getCards = function () {
       p1.innerText = `${oggetto.data[randomNumber].artist.name}`;
 
       const playIcon = document.createElement("button");
-      playIcon.className = "play-icon bi-play-circle-fill bg-transparent border-0";
+      playIcon.className =
+        "play-icon bi-play-circle-fill bg-transparent border-0";
 
       divCardInterno.appendChild(playIcon);
 
@@ -200,7 +221,9 @@ const getArtists = function () {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error(`Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`);
+        throw new Error(
+          `Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`
+        );
       }
     })
     .then((oggetto) => {
@@ -266,7 +289,9 @@ const getArtists2 = function () {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error(`Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`);
+        throw new Error(
+          `Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`
+        );
       }
     })
     .then((oggetto) => {
@@ -339,7 +364,9 @@ const getGeneri = function () {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error(`Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`);
+        throw new Error(
+          `Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`
+        );
       }
     })
     .then((oggetto) => {
@@ -347,7 +374,6 @@ const getGeneri = function () {
       const randomNumber = Math.floor(Math.random() * 15);
 
       const contentsCenter = document.querySelectorAll(".generi");
-
 
       contentsCenter.forEach((content) => {
         const cardCenterContent = document.createElement("div");
@@ -386,7 +412,13 @@ const getGeneri = function () {
 /* FINE PARTE CENTRALE ------------------------------------------------ */
 
 /* QUI STIAMO PRENDENDO GLI ALBUM PER L'ASIDE ------------------------------------------------ */
-let asideParamsAlbums = ["7577443", "215835692", "654526461", "8348500", "597803082"];
+let asideParamsAlbums = [
+  "7577443",
+  "215835692",
+  "654526461",
+  "8348500",
+  "597803082"
+];
 
 const URLendPointAlbum = "https://deezerdevs-deezer.p.rapidapi.com/album/";
 
@@ -403,7 +435,9 @@ const getAsideAlbums = function () {
         if (res.ok) {
           return res.json();
         } else {
-          throw new Error(`Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`);
+          throw new Error(
+            `Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`
+          );
         }
       })
       .then((oggetto) => {
@@ -476,7 +510,9 @@ const getAsideArtists = function () {
         if (res.ok) {
           return res.json();
         } else {
-          throw new Error(`Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`);
+          throw new Error(
+            `Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`
+          );
         }
       })
       .then((oggetto) => {
@@ -538,7 +574,7 @@ const getAsideArtists = function () {
 /* WINDOW ON LOAD */
 
 window.addEventListener("DOMContentLoaded", function () {
-  /*   for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 7; i++) {
     getCards();
   }
 
@@ -557,7 +593,7 @@ window.addEventListener("DOMContentLoaded", function () {
   for (let i = 0; i < 12; i++) {
     getGeneri();
   }
- */
+
   getAsideAlbums();
 
   getAsideArtists();
