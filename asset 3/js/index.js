@@ -448,7 +448,7 @@ const getAsideAlbums = function () {
         cardAside.className = "card card-aside";
 
         cardAside.addEventListener("click", () => {
-          window.location.href = `/albums.html?id=${oggetto.id}`;
+          window.location.href = `/album.html?id=${oggetto.id}`;
         });
 
         const divCard = document.createElement("div");

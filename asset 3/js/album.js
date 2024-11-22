@@ -76,7 +76,7 @@ const fetchAlbumData = (id) => {
                     <h1 class="fw-bold titleAlbum">${album.title}</h1>
                     <div class="d-flex align-items-baseline">
                       <img
-                      src= ${album.artist.picture_small}
+                      src= ${album.artist.picture_medium}
                        alt=""
                         class="rounded-circle"
                         style="width: 9%; object-fit: contain"
