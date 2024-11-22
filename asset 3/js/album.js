@@ -54,43 +54,109 @@ const fetchAlbumData = (id) => {
       console.log(album);
 
       const cardAlbum = document.getElementById("cardAlbum");
-      cardAlbum.innerHTML = `
- <div class="album-img d-flex px-3 gap-3 py-4">
-                  <img
-                  src= ${album.cover_medium}
-                    alt="..."
-                    style="
-                      max-width: 27%;
-                      height: 27%;
-                      border-radius: 6px;
-                      object-fit: contain;
-                      box-shadow: 2px 1px 10px black;
-                    "
-                  />
 
-                  <div
-                    class="album-title d-flex flex-column justify-content-between"
-                  >
-                    <p class="py-1">Album</p>
+      const albumData = album; // Supponiamo che 'album' contenga i dati dell'album
 
-                    <h1 class="fw-bold titleAlbum">${album.title}</h1>
-                    <div class="d-flex align-items-baseline">
-                      <img
-                      src= ${album.artist.picture_medium}
-                       alt=""
-                        class="rounded-circle"
-                        style="width: 9%; object-fit: contain"
-                      />
-                      <div class="px-2 align-self-end">
-                        <h6 class="fw-bold">${album.artist.name}</h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-`;
+      // Crea un elemento div principale per l'album
+      const albumDiv = document.createElement("div");
+      albumDiv.classList.add("album-img", "d-flex", "px-3", "gap-3", "py-4");
+
+      // Crea l'elemento immagine
+      const img = document.createElement("img");
+      img.classList.add("immagine");
+      img.src = albumData.cover_medium;
+      img.alt = "Album Cover";
+      img.style.maxWidth = "27%";
+      img.style.height = "27%";
+      img.style.borderRadius = "6px";
+      img.style.objectFit = "contain";
+      img.style.boxShadow = "2px 1px 10px black";
+
+      // Aggiungi l'immagine al div dell'album
+      albumDiv.appendChild(img);
+
+      // Usa ColorThief per ottenere il colore dominante
+      if (typeof ColorThief !== "undefined") {
+        const colorThief = new ColorThief();
+
+        // Assicurati che l'immagine sia completamente caricata
+
+        if (img.complete) {
+          const dominantColor = colorThief.getColor(img); // Restituisce [r, g, b]
+          /* console.log(dominantColor); */
+
+          albumDiv.style.background = `linear-gradient(to right, rgb(${dominantColor.join(
+            ","
+          )}), rgba(255, 255, 255, 0.5))`;
+        } else {
+          img.addEventListener("load", () => {
+            const dominantColor = colorThief.getColor(img); // Restituisce [r, g, b]
+
+            // Applica il linear gradient sul div principale con il colore dominante
+            albumDiv.style.background = `linear-gradient(to right, rgb(${dominantColor.join(
+              ","
+            )}), rgba(255, 255, 255, 0.5))`;
+          });
+        }
+      } else {
+        console.error("Color Thief non è disponibile!");
+      }
+
+      // Crea il contenitore del titolo e del nome dell'artista
+      const titleDiv = document.createElement("div");
+      titleDiv.classList.add(
+        "album-title",
+        "d-flex",
+        "flex-column",
+        "justify-content-between"
+      );
+
+      // Crea e aggiungi il paragrafo "Album"
+      const albumText = document.createElement("p");
+      albumText.classList.add("py-1");
+      albumText.textContent = "Album";
+      titleDiv.appendChild(albumText);
+
+      // Crea e aggiungi il titolo dell'album
+      const title = document.createElement("h1");
+      title.classList.add("fw-bold", "titleAlbum");
+      title.textContent = albumData.title;
+      titleDiv.appendChild(title);
+
+      // Crea il contenitore per l'artista
+      const artistDiv = document.createElement("div");
+      artistDiv.classList.add("d-flex", "align-items-baseline");
+
+      // Crea e aggiungi l'immagine dell'artista
+      const artistImg = document.createElement("img");
+      artistImg.src = albumData.artist.picture_medium;
+      artistImg.alt = "Artist Picture";
+      artistImg.classList.add("rounded-circle");
+      artistImg.style.width = "9%";
+      artistImg.style.objectFit = "contain";
+      artistDiv.appendChild(artistImg);
+
+      // Crea e aggiungi il nome dell'artista
+      const artistNameDiv = document.createElement("div");
+      artistNameDiv.classList.add("px-2", "align-self-end");
+
+      const artistName = document.createElement("h6");
+      artistName.classList.add("fw-bold");
+      artistName.textContent = albumData.artist.name;
+      artistNameDiv.appendChild(artistName);
+
+      // Aggiungi il contenitore dell'artista al div principale
+      artistDiv.appendChild(artistNameDiv);
+
+      // Aggiungi il contenitore con il titolo e l'artista al div principale
+      titleDiv.appendChild(artistDiv);
+
+      // Aggiungi il contenuto dell'album al DOM
+      albumDiv.appendChild(titleDiv);
+      cardAlbum.appendChild(albumDiv);
     })
     .catch((error) => {
-      console.error("Errore nel recuperare i dati dell'artista:", error);
+      console.error(error);
     });
 };
 

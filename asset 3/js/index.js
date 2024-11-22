@@ -571,29 +571,31 @@ const getAsideArtists = function () {
 };
 /* FINE ARTISTI ASIDE ---------------------------------------------------------------------------------  */
 
-/* WINDOW ON LOAD */
+/* LINEAR GRADIENT SULLA HOME  ---------------------------------------------------------------------------------   */
+
+/* WINDOW ON LOAD  ---------------------------------------------------------------------------------  */
 
 window.addEventListener("DOMContentLoaded", function () {
-  /*   for (let i = 0; i < 7; i++) {
+  /*  for (let i = 0; i < 8; i++) {
     getCards();
   }
 
   setTimeout(() => {
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 10; i++) {
       getArtists();
     }
   }, 500);
 
   setTimeout(() => {
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 10; i++) {
       getArtists2();
     }
   }, 900);
 
   for (let i = 0; i < 12; i++) {
     getGeneri();
-  }
- */
+  } */
+
   getAsideAlbums();
 
   getAsideArtists();

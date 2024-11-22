@@ -157,7 +157,7 @@ body {
 
 #centralContent {
   overflow: hidden;
-  background-color: #121212;
+
   height: 80vh;
   overflow-y: scroll;
 }
@@ -443,8 +443,8 @@ body {
   background: rgb(36, 36, 36);
   background: linear-gradient(
     0deg,
-    rgba(36, 36, 36, 1) 50%,
-    rgba(54, 64, 19, 1) 100%
+    rgba(12, 12, 12, 1) 50%,
+    rgb(27, 64, 19) 100%
   );
 }
 #cardAlbum {

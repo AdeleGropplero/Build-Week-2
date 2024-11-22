@@ -78,6 +78,97 @@ const fetchArtistData = (id) => {
     </div>
   </div>
 `;
+      /* Fetch CANZONI */
+
+      fetchArtistSongs(artista.name);
+    })
+    .catch((error) => {
+      console.error("Errore nel recuperare i dati dell'artista:", error);
+    });
+};
+
+/* Fetch CANZONI */
+
+const fetchArtistSongs = (artistName) => {
+  const URLSongs = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${artistName}`;
+
+  fetch(URLSongs, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": "a7524d652amshb0c3cd3dd6a3172p181ad3jsn2d82a48da120",
+      "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
+    }
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Impossibile recuperare i dati dell'artista");
+      }
+    })
+    .then((songs) => {
+      console.log("RISULTATOOOOOOOOOO:", songs);
+
+      const bestSongs = songs.data.slice(0, 6); // Usa slice per prendere le prime 6 canzoni
+      console.log("best:", bestSongs);
+
+      const songList = document.querySelector(".songList"); // Assicurati che esista un elemento con questa classe
+      songList.innerHTML = ""; // Pulisce eventuali contenuti esistenti nella lista
+
+      bestSongs.forEach((song) => {
+        const li = document.createElement("li"); // Crea un elemento list-item
+        li.innerHTML = `
+    <div class="card card-aside justify-content-between">
+      <div class="d-flex">
+        <div class="p-2">
+          <img
+            src="${song.album.cover_medium}" 
+            class="img-fluid rounded img-aside"
+            alt="${song.title}"
+          />
+        </div>
+        <div
+          class="px-3 py-1 d-flex align-content-center justify-content-between w-100 align-items-center align-self-center"
+        >
+          <div
+            class="px-0 py-2 overflow-hidden align-self-end"
+          >
+            <h5 class="card-title fs-6">${song.title}</h5>
+          </div>
+          <div class="px-0 py-2">
+            <span class="card-title fs-6">${song.rank} Ascolti</span>
+          </div>
+          <div class="spaceminutes py-0">
+            <div class="d-flex justify-content-between">
+              <button
+                class="bg-transparent border border-0"
+              >
+                <div class="align-self-center">
+                  <i class="bi bi-plus-circle"></i>
+                </div>
+              </button>
+              <div
+                class="align-self-end"
+                style="padding-top: 14px"
+              >
+                <p>${Math.floor(song.duration / 60)}:${
+          song.duration % 60 < 10 ? "0" : ""
+        }${song.duration % 60} Min</p>
+              </div>
+              <button
+                class="bg-transparent border border-0"
+              >
+                <div class="align-self-center">
+                  <i class="bi bi-three-dots"></i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+        songList.appendChild(li); // Aggiungi la card alla lista
+      });
     })
     .catch((error) => {
       console.error("Errore nel recuperare i dati dell'artista:", error);
