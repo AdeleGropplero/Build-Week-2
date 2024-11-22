@@ -557,7 +557,7 @@ window.addEventListener("DOMContentLoaded", function () {
   for (let i = 0; i < 12; i++) {
     getGeneri();
   }
- */
+
   getAsideAlbums();
 
   getAsideArtists();
