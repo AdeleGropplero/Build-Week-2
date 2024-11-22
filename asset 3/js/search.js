@@ -87,24 +87,30 @@ window.addEventListener("DOMContentLoaded", () => {
 }); */
 
 /* Selezioniamo dinamicamente il colore medio delle img */
-/* const ColorThief = require("color-thief"); */
 
 const cards = document.querySelectorAll(".div-interno-col");
 
 if (typeof ColorThief !== "undefined") {
   const colorThief = new ColorThief();
+  console.log(colorThief);
 
   // Per ogni card
   cards.forEach((card) => {
     const image = card.querySelector(".img-colore-sfondo"); /* prendo l'img*/
-
-    /* in questo punto mi assicuro che l'immagine sia caricata */
-    image.addEventListener("load", () => {
+    if (image.complete) {
       const dominantColor = colorThief.getColor(image); // Restituisce [r, g, b]
       /* console.log(dominantColor); */
 
       card.style.backgroundColor = `rgb(${dominantColor.join(",")})`;
-    });
+    } else {
+      /* in questo punto mi assicuro che l'immagine sia caricata */
+      image.addEventListener("load", () => {
+        const dominantColor = colorThief.getColor(image); // Restituisce [r, g, b]
+        /* console.log(dominantColor); */
+
+        card.style.backgroundColor = `rgb(${dominantColor.join(",")})`;
+      });
+    }
   });
 } else {
   console.error("Color Thief non è disponibile!");
