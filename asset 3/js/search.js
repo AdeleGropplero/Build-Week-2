@@ -87,6 +87,8 @@ window.addEventListener("DOMContentLoaded", () => {
 }); */
 
 /* Selezioniamo dinamicamente il colore medio delle img */
+const ColorThief = require("color-thief");
+
 const cards = document.querySelectorAll(".div-interno-col");
 
 if (typeof ColorThief !== "undefined") {
