@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       searchContainer.style.backgroundColor = "#222529";
       searchContainer.style.borderRadius = "5px";
       searchContainer.style.maxWidth = "80%";
+      searchBar.style.maxWidth = "80%";
 
       recenti.style.display = "none";
     } else {

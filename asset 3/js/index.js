@@ -16,7 +16,9 @@ content.addEventListener("scroll", () => {
 /* caroselli centrali*/
 
 const contentCenter = document.querySelectorAll(".content-center");
-const scrollableXContainerCenter = document.querySelectorAll(".scrollableX-container-center");
+const scrollableXContainerCenter = document.querySelectorAll(
+  ".scrollableX-container-center"
+);
 contentCenter.forEach((singleContent) => {
   singleContent.addEventListener("scroll", () => {
     const scrollLeft = singleContent.scrollLeft;
@@ -48,7 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
       searchBar.style.borderRadius = "2px";
       searchContainer.style.backgroundColor = "#222529";
       searchContainer.style.borderRadius = "5px";
-      searchContainer.style.width = "80%";
+      searchContainer.style.maxWidth = "80%";
+      searchBar.style.maxWidth = "80%";
 
       recenti.style.display = "none";
     } else {
@@ -99,7 +102,22 @@ const headerKeysMatteuccio = {
 };
 
 const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
-const params = ["eminem", "mannarino", "lazza", "radiohead", "883", "altj", "alter%20bridge", "salmo", "hozier", "mina", "muse", "pomme", "sia", "shiva"];
+const params = [
+  "eminem",
+  "mannarino",
+  "lazza",
+  "radiohead",
+  "883",
+  "altj",
+  "alter%20bridge",
+  "salmo",
+  "hozier",
+  "mina",
+  "muse",
+  "pomme",
+  "sia",
+  "shiva"
+];
 
 let availableParams = [...params];
 
@@ -122,7 +140,9 @@ const getCards = function () {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error(`Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`);
+        throw new Error(
+          `Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`
+        );
       }
     })
     .then((oggetto) => {
@@ -131,7 +151,8 @@ const getCards = function () {
 
       const row = document.querySelector(".row-center-orizontal-cards");
       const col = document.createElement("div");
-      col.className = "col-6 col-md-6 col-lg-4 col-xl-3 px-0 cols-center-orizontal-cards";
+      col.className =
+        "col-6 col-md-6 col-lg-4 col-xl-3 px-0 cols-center-orizontal-cards";
 
       const cardCenterOrizontal = document.createElement("div");
       cardCenterOrizontal.className = "card orizontal-card-central";
@@ -163,7 +184,8 @@ const getCards = function () {
       p1.innerText = `${oggetto.data[randomNumber].artist.name}`;
 
       const playIcon = document.createElement("button");
-      playIcon.className = "play-icon bi-play-circle-fill bg-transparent border-0";
+      playIcon.className =
+        "play-icon bi-play-circle-fill bg-transparent border-0";
 
       divCardInterno.appendChild(playIcon);
 
@@ -200,7 +222,9 @@ const getArtists = function () {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error(`Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`);
+        throw new Error(
+          `Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`
+        );
       }
     })
     .then((oggetto) => {
@@ -266,7 +290,9 @@ const getArtists2 = function () {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error(`Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`);
+        throw new Error(
+          `Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`
+        );
       }
     })
     .then((oggetto) => {
@@ -339,7 +365,9 @@ const getGeneri = function () {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error(`Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`);
+        throw new Error(
+          `Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`
+        );
       }
     })
     .then((oggetto) => {
@@ -347,7 +375,6 @@ const getGeneri = function () {
       const randomNumber = Math.floor(Math.random() * 15);
 
       const contentsCenter = document.querySelectorAll(".generi");
-
 
       contentsCenter.forEach((content) => {
         const cardCenterContent = document.createElement("div");
@@ -386,7 +413,13 @@ const getGeneri = function () {
 /* FINE PARTE CENTRALE ------------------------------------------------ */
 
 /* QUI STIAMO PRENDENDO GLI ALBUM PER L'ASIDE ------------------------------------------------ */
-let asideParamsAlbums = ["7577443", "215835692", "654526461", "8348500", "597803082"];
+let asideParamsAlbums = [
+  "7577443",
+  "215835692",
+  "654526461",
+  "8348500",
+  "597803082"
+];
 
 const URLendPointAlbum = "https://deezerdevs-deezer.p.rapidapi.com/album/";
 
@@ -403,12 +436,12 @@ const getAsideAlbums = function () {
         if (res.ok) {
           return res.json();
         } else {
-          throw new Error(`Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`);
+          throw new Error(
+            `Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`
+          );
         }
       })
       .then((oggetto) => {
-        console.log(oggetto);
-
         const containerCards = document.querySelector("#containerCards");
 
         const cardAside = document.createElement("div");
@@ -468,7 +501,7 @@ const getAsideArtists = function () {
     fetch(URLendPointArtist + id, {
       method: "GET",
       headers: {
-        "x-rapidapi-key": "79e73f6e23msh27cee76b6fac777p19859ejsnca84c5744e54",
+        "x-rapidapi-key": "a7524d652amshb0c3cd3dd6a3172p181ad3jsn2d82a48da120",
         "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
       }
     })
@@ -476,21 +509,20 @@ const getAsideArtists = function () {
         if (res.ok) {
           return res.json();
         } else {
-          throw new Error(`Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`);
+          throw new Error(
+            `Ci dispiace, non siamo riusciti a reperire i dati dell'artista.`
+          );
         }
       })
       .then((oggetto) => {
-        console.log(oggetto);
-
         const containerCards = document.querySelector("#containerCards");
 
         const cardAside = document.createElement("div");
         cardAside.className = "card card-aside";
 
-        cardAside,
-          addEventListener("click", () => {
-            window.location.href = `/artist.html?id=${oggetto.id}`;
-          });
+        cardAside.addEventListener("click", () => {
+          window.location.href = `/artist.html?id=${oggetto.id}`;
+        });
 
         const divCard = document.createElement("div");
         divCard.className = "d-flex";
