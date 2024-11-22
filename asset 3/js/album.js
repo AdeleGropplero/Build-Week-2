@@ -72,18 +72,16 @@ const fetchAlbumData = (id) => {
       img.style.objectFit = "contain";
       img.style.boxShadow = "2px 1px 10px black";
 
-      // Aggiungi l'immagine al div dell'album
       albumDiv.appendChild(img);
 
-      // Usa ColorThief per ottenere il colore dominante
-      if (typeof ColorThief !== "undefined") {
+      /*  if (typeof ColorThief !== "undefined") {
         const colorThief = new ColorThief();
 
         // Assicurati che l'immagine sia completamente caricata
 
         if (img.complete) {
           const dominantColor = colorThief.getColor(img); // Restituisce [r, g, b]
-          /* console.log(dominantColor); */
+         
 
           albumDiv.style.background = `linear-gradient(to right, rgb(${dominantColor.join(
             ","
@@ -100,7 +98,7 @@ const fetchAlbumData = (id) => {
         }
       } else {
         console.error("Color Thief non è disponibile!");
-      }
+      } */
 
       // Crea il contenitore del titolo e del nome dell'artista
       const titleDiv = document.createElement("div");

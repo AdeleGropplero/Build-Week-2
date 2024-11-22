@@ -576,7 +576,7 @@ const getAsideArtists = function () {
 /* WINDOW ON LOAD  ---------------------------------------------------------------------------------  */
 
 window.addEventListener("DOMContentLoaded", function () {
-  /*  for (let i = 0; i < 8; i++) {
+  /*   for (let i = 0; i < 8; i++) {
     getCards();
   }
 
@@ -592,11 +592,11 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   }, 900);
 
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 10; i++) {
     getGeneri();
-  } */
+  }
 
   getAsideAlbums();
 
-  getAsideArtists();
+  getAsideArtists(); */
 });
