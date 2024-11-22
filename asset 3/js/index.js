@@ -348,6 +348,7 @@ const getGeneri = function () {
 
       const contentsCenter = document.querySelectorAll(".generi");
 
+
       contentsCenter.forEach((content) => {
         const cardCenterContent = document.createElement("div");
         cardCenterContent.className = "card-center-content";
