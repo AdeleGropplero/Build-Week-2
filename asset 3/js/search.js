@@ -87,7 +87,7 @@ window.addEventListener("DOMContentLoaded", () => {
 }); */
 
 /* Selezioniamo dinamicamente il colore medio delle img */
-const ColorThief = require("color-thief");
+/* const ColorThief = require("color-thief"); */
 
 const cards = document.querySelectorAll(".div-interno-col");
 
@@ -96,11 +96,11 @@ if (typeof ColorThief !== "undefined") {
 
   // Per ogni card
   cards.forEach((card) => {
-    const img = card.querySelector(".img-colore-sfondo"); /* prendo l'img*/
+    const image = card.querySelector(".img-colore-sfondo"); /* prendo l'img*/
 
     /* in questo punto mi assicuro che l'immagine sia caricata */
-    img.addEventListener("load", () => {
-      const dominantColor = colorThief.getColor(img); // Restituisce [r, g, b]
+    image.addEventListener("load", () => {
+      const dominantColor = colorThief.getColor(image); // Restituisce [r, g, b]
       /* console.log(dominantColor); */
 
       card.style.backgroundColor = `rgb(${dominantColor.join(",")})`;
